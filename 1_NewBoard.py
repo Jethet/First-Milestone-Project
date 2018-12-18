@@ -7,7 +7,7 @@ board = ['1 |', ' 2 |', ' 3\n',  '4 |', ' 5 |', ' 6\n',
 print(*board, sep='')
 """
 
-def create_board():
+def new_board():
     print("The board has 3 x 3 = 9 squares."
     " Each time you play you can mark one square.\n"
     "The player who gets three marks in a row (diagonal, horizontal or vertical)\n"
@@ -20,4 +20,4 @@ def create_board():
     board.append_row(['7', '8', '9'])
     print(board, '\n')
 
-create_board()
+new_board()
