@@ -6,14 +6,18 @@ board = ['1 |', ' 2 |', ' 3\n',  '4 |', ' 5 |', ' 6\n',
         '7 |', ' 8 |', ' 9\n']
 print(*board, sep='')
 """
-from beautifultable import BeautifulTable
+
 def create_board():
     print("The board has 3 x 3 = 9 squares."
-    " When three squares in a row (horizontal or vertical)"
-    " are taken, you win.\n")
+    " Each time you play you can mark one square.\n"
+    "The player who gets three marks in a row (diagonal, horizontal or vertical)\n"
+    "wins the game.\n")
 
+    from beautifultable import BeautifulTable
     board = BeautifulTable()
     board.append_row(['1', '2', '3'])
     board.append_row(['4', '5', '6'])
     board.append_row(['7', '8', '9'])
-    print(board)
+    print(board, '\n')
+
+create_board()
