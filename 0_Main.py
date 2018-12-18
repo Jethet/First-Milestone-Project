@@ -11,7 +11,7 @@ place a symbol on the board.
 player()
 
 #If the player wants to play: show board and explain choices
-create_board()
+new_board()
 
 #If player chooses a square, the choice is shown on the board
 choice_board()
