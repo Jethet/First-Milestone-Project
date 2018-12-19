@@ -17,7 +17,6 @@ def choice():
                 if choice == 1 and player == 1:
                     with open('board', mode = 'wb') as my_file:
                         pickle.dump(board, my_file)
-                        print(board)
                         board[0][0] = 'X'
                         square.remove(1)
                         print(board)
@@ -27,7 +26,6 @@ def choice():
                 elif choice == 1 and player == 2:
                     with open('board', mode = 'wb') as my_file:
                         pickle.dump(board, my_file)
-                        print(board)
                         board[0][0] = 'O'
                         square.remove(1)
                         print(board)
