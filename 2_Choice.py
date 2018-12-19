@@ -11,9 +11,12 @@ def choice():
     print(board, '\n')
     square = [1, 2, 3, 4, 5, 6, 7, 8, 9]
     choice = int(input("Where do you place your mark? "))
-    if choice in square:
-        if choice == 1:
+    player = int(input("Are you player 1 or player 2? "))
+    if choice in square and player == 1 or player == 2:
+        if choice == 1 and player == 1:
             board[0][0] = 'X'
-        elif choice == 2:
-            board[0][1] = 'X'
+        elif choice == 1 and player == 2:
+            board[0][0] = 'O'
     print(board)
+
+choice()
