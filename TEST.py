@@ -13,17 +13,20 @@ def choice():
             player = int(input("Are you player 1 or player 2? "))
             choice = int(input("Where do you place your mark? "))
             if choice in square:
-                if choice == 1 and player == 1:
-                    board[0][0] = 'X'
-                    square.remove(1)
-                    print(board)
-                elif choice == 1 and player == 2:
-                    board[0][0] = 'O'
-                    square.remove(1)
-                    print(board)                    
+                if player = 1 or player = 2:
+                    if choice == 1 and player == 1:
+                        board[0][0] = 'X'
+                        square.remove(1)
+                        print(board)
+                    elif choice == 1 and player == 2:
+                        board[0][0] = 'O'
+                        square.remove(1)
+                        print(board)
+                    else:
+                        print("Choose between 1 and 2. ")
         game = False
     except:
-        print("Please choose a number between 1 and 9. ")
+        print("Please enter a number. ")
 """
             elif choice == 2:
             board[0][1] = 'X'
