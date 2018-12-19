@@ -1,3 +1,5 @@
+import pickle
+
 def choice():
     from beautifultable import BeautifulTable
     board = BeautifulTable()
@@ -13,17 +15,27 @@ def choice():
             player = int(input("Are you player 1 or player 2? "))
             choice = int(input("Where do you place your mark? "))
             if choice in square:
-                if player = 1 or player = 2:
-                    if choice == 1 and player == 1:
-                        board[0][0] = 'X'
-                        square.remove(1)
-                        print(board)
-                    elif choice == 1 and player == 2:
-                        board[0][0] = 'O'
-                        square.remove(1)
-                        print(board)
-                    else:
-                        print("Choose between 1 and 2. ")
+                if player == 1 or player == 2:
+                    with open('board', mode = 'rb') as my_file:
+                        board = pickle.load(my_file)
+                        if choice == 1 and player == 1:
+                            board[0][0] = 'X'
+                            square.remove(1)
+                            print(board)
+                            with open('board', mode = 'wb') as my_file:   #file descriptor: pointer!!
+                                pickle.dump(board, my_file)
+
+                        elif choice == 1 and player == 2:
+                            with open('board', mode = 'rb') as my_file:
+                                board = pickle.load(my_file)
+                                board[0][0] = 'O'
+                                square.remove(1)
+                                print(board)
+                                with open('board', mode = 'wb') as my_file:   #file descriptor: pointer!!
+                                    pickle.dump(board, my_file)
+
+                else:
+                    print("Choose between 1 and 2. ")
         game = False
     except:
         print("Please enter a number. ")
