@@ -22,8 +22,7 @@ def choice():
                     board[0][0] = 'X'       #player 1 uses 'X' as mark
                     square.remove('1')      #the chosen square is no longer an option
                     print(board)            #the new board with 'X' is printed
-                    with open('board', mode = 'wb') as my_file:
-                        pickle.dump(board, my_file)   #the new board is saved
+
                 elif choice == 1 and player == 2:
                     board[0][0] = 'O'
                     square.remove('1')
