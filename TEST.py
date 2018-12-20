@@ -54,7 +54,7 @@ def choice():
 
                 else:
                     print("This is not a valid choice.")
-
+                    return
 
         else:
             print("This is not a valid choice.")
