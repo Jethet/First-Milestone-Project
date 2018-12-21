@@ -11,12 +11,13 @@ def choice():
     board.append_row(['4', '5', '6'])
     board.append_row(['7', '8', '9'])
     print(board)
+    board = False
     with open('board', mode = 'wb') as my_file:  #this is meant to save the board
         pickle.dump(board, my_file)
-    player = int(input("Are you player 1 or player 2? "))
-    square = ['1', '2', '3', '4', '5', '6', '7', '8', '9'] #3 x 3 squares on board
-    choice = input("Where do you place your mark? ")
-    while player == 1 or player == 2:
+    while board == False:
+        player = int(input("Are you player 1 or player 2? "))
+        square = ['1', '2', '3', '4', '5', '6', '7', '8', '9'] #3 x 3 squares on board
+        choice = input("Where do you place your mark? ")
         if choice == '1' and player == 1:
             board[0][0] = 'X'       #player 1 uses 'X' as mark
             square.remove('1') #the chosen square is no longer an option
@@ -52,10 +53,6 @@ def choice():
         else:
             print("This is not a valid choice.")
             return
-
-    else:
-        print("This is not a valid choice.")
-        return
-    player = False
-
+    board = False
+    
 choice()
