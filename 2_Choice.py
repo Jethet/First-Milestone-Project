@@ -50,3 +50,6 @@ def choice():
         print("This is not a valid entry.")
 
 choice()
+"""
+WHILE SQUARE AVAILABLE ... loop ?
+"""
