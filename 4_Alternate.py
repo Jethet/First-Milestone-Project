@@ -1,5 +1,12 @@
-player = int(input("Choose betweeen 1 and 2. "))
-if True:
-    player == 1:
+
+def alternate():
+    player = int(input("Choose betweeen 1 and 2. "))
+    while True:
+        player == 1
         print("Great")
-        False
+        break
+    while player == 2:
+        print("Fine")
+
+
+alternate()
