@@ -39,6 +39,8 @@ def choice():
                         pickle.dump(board, my_file)
 
         player == False
+choice()
+
 """
                 elif choice == '1' and player == 2:
                     board[0][0] = 'O'
@@ -61,4 +63,3 @@ def choice():
             print("This is not a valid choice.")
             return
 """
-choice()
