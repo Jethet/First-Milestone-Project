@@ -14,32 +14,31 @@ def choice():
     with open('board', mode = 'wb') as my_file:  #this is meant to save the board
         pickle.dump(board, my_file)
         player = int(input("Are you player 1 or player 2? "))
-        if player != 1 and player != 2:
-                print("Choose between 1 and 2. ")
-        while player == 1 or player == 2:
-            square = ['1', '2', '3', '4', '5', '6', '7', '8', '9'] #3 x 3 squares on board
-            choice = input("Where do you place your mark? ")
-            while choice in square:
-                if choice == '1' and player == 1:
-                    board[0][0] = 'X'       #player 1 uses 'X' as mark
-                    square.remove('1')
-                    print(square)      #the chosen square is no longer an option
-                    print(board)
-                    return
-                    with open('board', mode = 'wb') as my_file:
-                            pickle.dump(board, my_file)           #the new board with 'X' is printed
-                elif choice == '2' and player == 1:
-                    board[0][1] = 'X'
-                    square.remove('2')
-                    print(board)
-                    with open('board', mode = 'wb') as my_file:
-                            pickle.dump(board, my_file)
-                elif choice == '3' and player == 1:
-                    board[0][2] = 'X'
-                    square.remove('3')
-                    print(board)
-                    with open('board', mode = 'wb') as my_file:
-                            pickle.dump(board, my_file)
+        player == False
+        square = ['1', '2', '3', '4', '5', '6', '7', '8', '9'] #3 x 3 squares on board
+        choice = input("Where do you place your mark? ")
+        while player == False and player == 1 or player == 2:
+            print("Choose between 1 and 2. ")
+            if choice == '1' and player == 1:
+                board[0][0] = 'X'       #player 1 uses 'X' as mark
+                square.remove('1') #the chosen square is no longer an option
+                print(board)
+                with open('board', mode = 'wb') as my_file:
+                        pickle.dump(board, my_file)           #the new board with 'X' is printed
+            elif choice == '2' and player == 1:
+                board[0][1] = 'X'
+                square.remove('2')
+                print(board)
+                with open('board', mode = 'wb') as my_file:
+                        pickle.dump(board, my_file)
+            elif choice == '3' and player == 1:
+                board[0][2] = 'X'
+                square.remove('3')
+                print(board)
+                with open('board', mode = 'wb') as my_file:
+                        pickle.dump(board, my_file)
+
+        player == False
 """
                 elif choice == '1' and player == 2:
                     board[0][0] = 'O'
