@@ -25,37 +25,27 @@ def choice():
                 board[0][0] = 'X'       #player 1 uses 'X' as mark
                 square.remove('1') #the chosen square is no longer an option
                 print(board)
-                with open('board', mode = 'wb') as my_file:
-                        pickle.dump(board, my_file)           #the new board with 'X' is printed
             elif choice == '2' and player == 1:
                 board[0][1] = 'X'
                 square.remove('2')
                 print(board)
-                with open('board', mode = 'wb') as my_file:
-                        pickle.dump(board, my_file)
             elif choice == '3' and player == 1:
                 board[0][2] = 'X'
                 square.remove('3')
                 print(board)
-                with open('board', mode = 'wb') as my_file:
-                        pickle.dump(board, my_file)
-
             elif choice == '1' and player == 2:
                 board[0][0] = 'O'
                 square.remove('1')
                 print(board)
-                with open('board', mode = 'wb') as my_file:
-                        pickle.dump(board, my_file)
             elif choice == '2' and player == 2:
                 board[0][1] = 'O'
                 square.remove('2')
                 print(board)
-                with open('board', mode = 'wb') as my_file:
-                        pickle.dump(board, my_file)
-
             else:
                 print("This is not a valid choice.")
                 return
+        with open('board', mode = 'wb') as my_file:
+            pickle.dump(board, my_file)
     except:
         print("This is not a valid entry.")
 
