@@ -22,8 +22,10 @@ def choice():
             while choice in square:
                 if choice == '1' and player == 1:
                     board[0][0] = 'X'       #player 1 uses 'X' as mark
-                    square.remove('1')      #the chosen square is no longer an option
+                    square.remove('1')
+                    print(square)      #the chosen square is no longer an option
                     print(board)
+                    return
                     with open('board', mode = 'wb') as my_file:
                             pickle.dump(board, my_file)           #the new board with 'X' is printed
                 elif choice == '2' and player == 1:
@@ -38,7 +40,7 @@ def choice():
                     print(board)
                     with open('board', mode = 'wb') as my_file:
                             pickle.dump(board, my_file)
-
+"""
                 elif choice == '1' and player == 2:
                     board[0][0] = 'O'
                     square.remove('1')
@@ -59,5 +61,5 @@ def choice():
         else:
             print("This is not a valid choice.")
             return
-
+"""
 choice()
