@@ -15,11 +15,14 @@ def choice():
         pickle.dump(board, my_file)
     try:
         while True:
+            square = ['1', '2', '3', '4', '5', '6', '7', '8', '9'] #3 x 3 squares on board
+            if ['X', 'X', 'X'] in board:
+                print("Player 1 is the winner!")
+                break
             player = int(input("Are you player 1 or player 2? "))
             if player != 1 and player != 2:
                 print("This is not a valid entry")
                 break
-            square = ['1', '2', '3', '4', '5', '6', '7', '8', '9'] #3 x 3 squares on board
             choice = input("Where do you place your mark? ")
             if choice == '1' and player == 1:
                 board[0][0] = 'X'       #player 1 uses 'X' as mark
