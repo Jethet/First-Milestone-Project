@@ -16,19 +16,12 @@ def choice():
     elif start != '1' and start !='2':
         print("This is not valid. Please enter 1 or 2.")
     else:
-        player = int(input("Which player do you want to be: 1 for 'X' and 2 for '0'. "))
-        if player == 1:
-            print("Your mark is 'X'.")
-        elif player == 2:
-            print("Your mark is 'O'.")
-        else:
-            print("This is not a valid entry.")
-        print("Player 1 starts the game."")
+        print("Player 1 starts the game.")
     try:
         while True:
             square = ['1', '2', '3', '4', '5', '6', '7', '8', '9'] #3 x 3 squares on board
-            player = int(input("Are you player 1 or player 2? "))
-            if player != 1 and player != 2:
+            player = input("Are you player X or player O? ")
+            if player != 'X' and player != 'O':
                 print("This is not a valid choice.")
                 break
             if ['X', 'X', 'X'] in board:
@@ -41,43 +34,43 @@ def choice():
                 print("Player 1 is the winner!")
                 break
             choice = input("Where do you place your mark? ")
-            if choice == '1' and player == 1:
+            if choice == '1' and player == 'X':
                 board[0][0] = 'X'       #player 1 uses 'X' as mark
                 square.remove('1') #the chosen square is no longer an option
                 print(board)
-            elif choice == '2' and player == 1:
+            elif choice == '2' and player == 'X':
                 board[0][1] = 'X'
                 square.remove('2')
                 print(board)
-            elif choice == '3' and player == 1:
+            elif choice == '3' and player == 'X':
                 board[0][2] = 'X'
                 square.remove('3')
                 print(board)
-            elif choice == '4' and player == 1:
+            elif choice == '4' and player == 'X':
                 board[1][0] = 'X'
                 square.remove('4')
                 print(board)
-            elif choice == '5' and player == 1:
+            elif choice == '5' and player == 'X':
                 board[1][1] = 'X'
                 square.remove('5')
                 print(board)
-            elif choice == '6' and player == 1:
+            elif choice == '6' and player == 'X':
                 board[1][2] = 'X'
                 square.remove('6')
                 print(board)
-            elif choice == '7' and player == 1:
+            elif choice == '7' and player == 'X':
                 board[2][0] = 'X'
                 square.remove('7')
                 print(board)
-            elif choice == '1' and player == 2:
+            elif choice == '1' and player == 'O':
                 board[0][0] = 'O'
                 square.remove('1')
                 print(board)
-            elif choice == '2' and player == 2:
+            elif choice == '2' and player == 'O':
                 board[0][1] = 'O'
                 square.remove('2')
                 print(board)
-            elif choice == '3' and player == 2:
+            elif choice == '3' and player == 'O':
                 board[0][2] = 'O'
                 square.remove('3')
                 print(board)
