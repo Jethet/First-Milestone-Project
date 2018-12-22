@@ -14,20 +14,31 @@ def choice():
     if start == '2':
         print("Game over.")
     elif start != '1' and start !='2':
-        print("This is not a valid entry.")
+        print("This is not valid. Please enter 1 or 2.")
     else:
-        print("Player 1 is X and can choose first. Player 2 is O.")
+        player = int(input("Which player do you want to be: 1 for 'X' and 2 for '0'. "))
+        if player == 1:
+            print("Your mark is 'X'.")
+        elif player == 2:
+            print("Your mark is 'O'.")
+        else:
+            print("This is not a valid entry.")
+        print("Player 1 starts the game."")
     try:
         while True:
             square = ['1', '2', '3', '4', '5', '6', '7', '8', '9'] #3 x 3 squares on board
+            player = int(input("Are you player 1 or player 2? "))
+            if player != 1 and player != 2:
+                print("This is not a valid choice.")
+                break
             if ['X', 'X', 'X'] in board:
                 print("Player 1 is the winner!")
                 break
             elif ['O', 'O', 'O'] in board:
                 print("Player 2 is the winner!")
-            player = int(input("Are you player 1 or player 2? "))
-            if player != 1 and player != 2:
-                print("This is not a valid entry")
+                break
+            elif board.columns(0) == ['X', 'X', 'X']:
+                print("Player 1 is the winner!")
                 break
             choice = input("Where do you place your mark? ")
             if choice == '1' and player == 1:
