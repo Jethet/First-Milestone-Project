@@ -16,13 +16,7 @@ def choice():
     elif start != '1' and start !='2':
         print("This is not a valid entry.")
     else:
-        player = int(input("Which player do you want to be: 1 for 'X' and 2 for '0'. "))
-        if player == 1:
-            print("Player 1 will start: you can choose first.")
-        elif player == 2:
-            print("You are player 2. Player 1 gets the first turn.")
-        else:
-            print("This is not a valid entry.")
+        print("Player 1 is X and can choose first. Player 2 is O.")
     try:
         while True:
             square = ['1', '2', '3', '4', '5', '6', '7', '8', '9'] #3 x 3 squares on board
@@ -47,6 +41,22 @@ def choice():
             elif choice == '3' and player == 1:
                 board[0][2] = 'X'
                 square.remove('3')
+                print(board)
+            elif choice == '4' and player == 1:
+                board[1][0] = 'X'
+                square.remove('4')
+                print(board)
+            elif choice == '5' and player == 1:
+                board[1][1] = 'X'
+                square.remove('5')
+                print(board)
+            elif choice == '6' and player == 1:
+                board[1][2] = 'X'
+                square.remove('6')
+                print(board)
+            elif choice == '7' and player == 1:
+                board[2][0] = 'X'
+                square.remove('7')
                 print(board)
             elif choice == '1' and player == 2:
                 board[0][0] = 'O'
