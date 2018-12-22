@@ -2,8 +2,18 @@
 from itertools import cycle
 
 def alternate():
-    for player in cycle([player 1, player 2]):
+    turn = True
+    winner = 'XXX' or 'OOO'
+    currentSymbol = 'X'
 
+    while not winner:
+        if currentSymbol == 'X': currentSymbol = 'O'
+        elif currentSymbol == 'O': currentSymbol = 'X'
+
+
+
+
+alternate()
 
 
 
