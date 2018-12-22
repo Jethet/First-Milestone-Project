@@ -13,6 +13,19 @@ def choice():
     print(board)
     with open('board', mode = 'wb') as my_file:  #this is meant to save the board
         pickle.dump(board, my_file)
+    start = input("Would you like to play tic tac toe? Choose 1 for yes and 2 for no. ")
+    if start == '2':
+        print("Game over.")
+    elif start != '1' and start !='2':
+        print("This is not a valid entry.")
+    else:
+        player = input("Choose which player you want to be: 1 for 'X' and 2 for '0'. ")
+        if player == '1':
+            print("Player 1 will start: you can choose first.")
+        elif player == '2':
+            print("You are player 2. Player 1 gets the first turn.")
+        else:
+            print("This is not a valid entry.")
     try:
         while True:
             square = ['1', '2', '3', '4', '5', '6', '7', '8', '9'] #3 x 3 squares on board
