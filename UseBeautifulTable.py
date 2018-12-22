@@ -1,7 +1,9 @@
 # The BeautifulTable module has been installed and can be imported:
 from beautifultable import BeautifulTable
+
 #CREATE TABLE by providing a name for the table and use BeautifulTable()
 table = BeautifulTable()
+
 #CREATE HEADERS: table.column_headers = ['name1', 'name2', 'name3']
 #CREATE ROWS: table.append_row(['x', 'x', 'x']) NOTE: both ([])
 #!!!!! HEADER DOES NOT COUNT AS A ROW !!!!!
@@ -10,6 +12,7 @@ table.append_row(['1', '2', '3'])
 table.append_row(['4', '5', '6'])
 table.append_row(['7', '8', '9'])
 print(table)
+
 #CREATE new COLUMN: table.append_column('NAME'), ['DATA', 'D', 'D', 'D'])
 #Watch out for the use of both () and []
 table.append_column('player', ['X', 'O', 'X'])
@@ -19,6 +22,7 @@ print(table)
 #the properties of the original, it is a copy of the data.
 new_table = table[:3]
 print(new_table)
+
 #!!!!! HEADER DOES NOT COUNT AS A ROW !!!!!
 #You can ACCESS a ROW using its index:
 print(list(table[1]))
@@ -27,6 +31,7 @@ print(list(table[1]))
 print(table[2][3])
 #B)
 print(table[1]['player'])
+
 #You can ACCESS a COLUMN using header names (watch out for DUPLICATE
 #HEADERS) or using index. The column returned is an iterator, not a list.
 print(list(table['name3']))
@@ -55,6 +60,7 @@ print(table)
 table.column_alignments['name1'] = BeautifulTable.ALIGN_LEFT
 table.column_alignments['name3'] = BeautifulTable.ALIGN_RIGHT
 print(table)
+
 """
 Other options are:
 - updating existing columns with: table['NAME COLUMN'] = ['a', 'b', 'c']
