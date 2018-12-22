@@ -1,6 +1,4 @@
 
-from itertools import cycle
-
 def alternate():
     turn = True
     winner = 'XXX' or 'OOO'
