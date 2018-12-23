@@ -1,4 +1,6 @@
-# This is the function to choose the squares
+# This is the function that returns the choice of a square on the board.
+# Each time a choice has been made, the board is printed and the player
+# is asked if s/he is player X or player O, and what square they choose.
 
 def choice():
     while True:
@@ -10,7 +12,7 @@ def choice():
         player = input("Are you player X or player O? ")
         choice = input("Where do you place your mark? ")
         if choice == '1' and player == 'X':
-            board[0][0] = 'X'       #player 1 uses 'X' as mark
+            board[0][0] = 'X'
             square.remove('1') #the chosen square is no longer an option
             print(board)
         elif choice == '2' and player == 'X':
