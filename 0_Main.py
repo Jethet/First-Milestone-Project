@@ -15,5 +15,8 @@ new_board()
 #If player chooses a square, the choice is shown on the board
 choice()
 
-#To clear screen between games:
+#Declare winner
+winner()
+
+#To clear screen between games: (?? do I need this?)
 print(\n*100)
