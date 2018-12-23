@@ -1,5 +1,5 @@
-# The game has two players and they have to choose if they want to play as X or O
-# The players also have to choose X or O as their mark
+# The game has two players and they have to choose if they want to play.
+# The players also have to choose X or O as their mark.
 
 def player():
     start = input("Would you like to play tic tac toe? Choose 1 for yes and 2 for no. ")
