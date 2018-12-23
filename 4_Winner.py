@@ -1,14 +1,44 @@
 def winner():
-    from beautifultable import BeautifulTable   #this creates 3 x 3 table = board
-    board = BeautifulTable()
-    board.append_row(['1', '2', '3'])
-    board.append_row(['4', '5', '6'])
-    board.append_row(['7', '8', '9'])
-    print(board)
-    board[1][0] = 'X'
-    board[1][1] = 'X'
-    board[1][2] = 'X'
-    if ['X', 'X', 'X'] in board:
-        print("Player 1 is the winner!")
+    # Two options diagonal across with XXX:
+    if board[0][0] and board [1][1] and board[2][2] == 'X':
+        print("Player X is the winner!")
+        break
+    elif board[0][2] and board[1][1] and board[2][0] == 'X':
+        print("Player X is the winner!")
+        break
+    # Two options diagonal across with OOO:
+    if board[0][0] and board [1][1] and board[2][2] == 'O':
+        print("Player O is the winner!")
+        break
+    elif board[0][2] and board[1][1] and board[2][0] == 'O':
+        print("Player O is the winner!")
+        break
+    # Three options for vertical columns with XXX:
+    if board[0][0] and board[1][0] and board[2][0] == 'X':
+        print("Player X is the winner!")
+        break
+    elif board[0][1] and board[1][1] and board[2][1] == 'X':
+        print("Player X is the winner!")
+        break
+    elif board[0][2] and board[1][2] and board[2][2] == 'X':
+        print("Player X is the winner!")
+        break
+    # Three options for vertical columns with OOO:
+    elif board[0][0] and board[1][0] and board[2][0] == 'O':
+        print("Player O is the winner!")
+        break
+    elif board[0][1] and board[1][1] and board[2][1] == 'O':
+        print("Player X is the winner!")
+        break
+    elif board[0][2] and board[1][2] and board[2][2] == 'O':
+        print("Player X is the winner!")
+        break
+    # Horizontal XXX and OOO options:
+    elif ['X', 'X', 'X'] in board:
+        print("Player X is the winner!")
+        break
+    elif ['O', 'O', 'O'] in board:
+        print("Player X is the winner!")
+        break
 
 winner()
