@@ -5,6 +5,11 @@ The board should be printed out every time a player makes a move.
 You should be able to accept input of the player position and then
 place a symbol on the board.
 """
+import pickle
+
+with open('board', mode = 'wb') as my_file:  #this saves the board
+    pickle.dump(board, my_file)
+    
 #First step is ask player to play and what choice (X or O)
 #Player is identified as player 1 or player 2; player 1 starts.
 player()
