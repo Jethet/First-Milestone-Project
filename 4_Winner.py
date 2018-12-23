@@ -1,3 +1,7 @@
+# This function returns a 'winner!' message if a player has won the game.
+# There are many options for getting three X or three O in a row: horizontal,
+# vertical or diagonal.
+
 def winner():
     # Two options diagonal across with XXX:
     if board[0][0] and board [1][1] and board[2][2] == 'X':
