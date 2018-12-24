@@ -20,6 +20,8 @@ def choice():
         return
     else:
         print("Player X starts the game.")
+        with open('board', mode = 'rb') as my_file:
+            board = pickle.load(my_file)
 
     while True:
         player = 'X' or 'O'
