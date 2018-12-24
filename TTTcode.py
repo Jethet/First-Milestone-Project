@@ -30,54 +30,54 @@ def choice():
         if board[0][0] and board [1][1] and board[2][2] == 'X':
             print("Player X is the winner!")
             break
-        elif board[0][2] and board[1][1] and board[2][0] == 'X':
+        if board[0][2] and board[1][1] and board[2][0] == 'X':
             print("Player X is the winner!")
             break
         # Two options diagonal across with OOO:
-        elif board[0][0] and board [1][1] and board[2][2] == 'O':
+        if board[0][0] and board [1][1] and board[2][2] == 'O':
             print("Player O is the winner!")
             break
-        elif board[0][2] and board[1][1] and board[2][0] == 'O':
+        if board[0][2] and board[1][1] and board[2][0] == 'O':
             print("Player O is the winner!")
             break
         # Three options for vertical columns with XXX:
-        elif board[0][0] and board[1][0] and board[2][0] == 'X':
+        if board[0][0] and board[1][0] and board[2][0] == 'X':
             print("Player X is the winner!")
             break
-        elif board[0][1] and board[1][1] and board[2][1] == 'X':
+        if board[0][1] and board[1][1] and board[2][1] == 'X':
             print("Player X is the winner!")
             break
-        elif board[0][2] and board[1][2] and board[2][2] == 'X':
+        if board[0][2] and board[1][2] and board[2][2] == 'X':
             print("Player X is the winner!")
             break
         # Three options for vertical columns with OOO:
-        elif board[0][0] and board[1][0] and board[2][0] == 'O':
+        if board[0][0] and board[1][0] and board[2][0] == 'O':
             print("Player O is the winner!")
             break
-        elif board[0][1] and board[1][1] and board[2][1] == 'O':
+        if board[0][1] and board[1][1] and board[2][1] == 'O':
             print("Player O is the winner!")
             break
-        elif board[0][2] and board[1][2] and board[2][2] == 'O':
+        if board[0][2] and board[1][2] and board[2][2] == 'O':
             print("Player O is the winner!")
             break
         # Three options for horizontal XXX:
-        elif board[0][0] and board[0][1] and board[0][2] == 'X':
+        if board[0][0] and board[0][1] and board[0][2] == 'X':
             print("Player X is the winner!")
             break
-        elif  board[1][0] and board[1][1] and board[1][2] == 'X':
+        if  board[1][0] and board[1][1] and board[1][2] == 'X':
             print("Player X is the winner!")
             break
-        elif board[2][0] and board[2][1] and board[2][2] == 'X':
+        if board[2][0] and board[2][1] and board[2][2] == 'X':
             print("Player X is the winner!")
             break
         # Three options for horizontal OOO:
-        elif board[0][0] and board[0][1] and board[0][2] == 'O':
+        if board[0][0] and board[0][1] and board[0][2] == 'O':
             print("Player O is the winner!")
             break
-        elif board[1][0] and board[1][1] and board[1][2] == 'O':
+        if board[1][0] and board[1][1] and board[1][2] == 'O':
             print("Player O is the winner!")
             break
-        elif board[2][0] and board[2][1] and board[2][2] == 'O':
+        if board[2][0] and board[2][1] and board[2][2] == 'O':
             print("Player O is the winner!")
             break
 
@@ -162,8 +162,5 @@ def choice():
         else:
             print("This is not a valid choice.")
             return
-    with open('board', mode = 'wb') as my_file:
-        pickle.dump(board, my_file)
-
 
 choice()
