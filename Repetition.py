@@ -1,3 +1,3 @@
 def winner():
-    if ['X', 'X', 'X'] in board:
+    if square[[0][0], [1][0], [2][0]]== ['X', 'X', 'X']:
         print("Win!")
