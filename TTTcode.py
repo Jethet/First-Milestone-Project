@@ -32,14 +32,14 @@ def choice():
             print("Player X is the winner!")
             break
         # Two options diagonal across with OOO:
-        if board[0][0] and board [1][1] and board[2][2] == 'O':
+        elif board[0][0] and board [1][1] and board[2][2] == 'O':
             print("Player O is the winner!")
             break
         elif board[0][2] and board[1][1] and board[2][0] == 'O':
             print("Player O is the winner!")
             break
         # Three options for vertical columns with XXX:
-        if board[0][0] and board[1][0] and board[2][0] == 'X':
+        elif board[0][0] and board[1][0] and board[2][0] == 'X':
             print("Player X is the winner!")
             break
         elif board[0][1] and board[1][1] and board[2][1] == 'X':
@@ -58,11 +58,24 @@ def choice():
         elif board[0][2] and board[1][2] and board[2][2] == 'O':
             print("Player O is the winner!")
             break
-        # Horizontal XXX and OOO options:
-        elif ['X', 'X', 'X'] in board:
+        # Three options for horizontal XXX:
+        elif board[0][0] and board[0][1] and board[0][2] == 'X':
             print("Player X is the winner!")
             break
-        elif ['O', 'O', 'O'] in board:
+        elif  board[1][0] and board[1][1] and board[1][2] == 'X':
+            print("Player X is the winner!")
+            break
+        elif board[2][0] and board[2][1] and board[2][2] == 'X':
+            print("Player X is the winner!")
+            break
+        # Three options for horizontal OOO:
+        elif board[0][0] and board[0][1] and board[0][2] == 'O':
+            print("Player O is the winner!")
+            break
+        elif board[1][0] and board[1][1] and board[1][2] == 'O':
+            print("Player O is the winner!")
+            break
+        elif board[2][0] and board[2][1] and board[2][2] == 'O':
             print("Player O is the winner!")
             break
 
@@ -70,7 +83,7 @@ def choice():
         if player != 'X' and player != 'O':
             print("This is not a valid choice.")
             break
-        
+
         choice = input("Where do you place your mark? ")
         if choice == '1' and player == 'X':
             board[0][0] = 'X'       #player 1 uses 'X' as mark
