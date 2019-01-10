@@ -22,9 +22,9 @@ def choice():
             print("This is not a valid choice.")
             break
         choice = input("Where do you place your mark? ")
-        print(square_taken)
-        print(choice)
-        print(choice in square_taken)
+        #print(square_taken)
+        #print(choice)
+        #print(choice in square_taken)
         if choice in square_taken:
             print("This square is taken.")
             continue
@@ -32,12 +32,12 @@ def choice():
             if choice == '1' and player == 'X':
                 board[0][0] = 'X'
                 square_taken.append('1') #the chosen square is no longer an option
-                print(square_taken)
+                #print(square_taken)
                 print(board)
             elif choice == '2' and player == 'X':
                 board[0][1] = 'X'
                 square_taken.append('2')
-                print(square_taken)
+                #print(square_taken)
                 print(board)
             elif choice == '3' and player == 'X':
                 board[0][2] = 'X'
