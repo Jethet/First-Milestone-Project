@@ -23,7 +23,7 @@ def choice():
         player = input("Are you player X or player O? ")
         choice = input("Where do you place your mark? ")
         if choice in square_taken:
-            print("This square is taken.")
+            print("This square is taken.", choice)
         if choice not in square_taken:
             if choice == '1' and player == 'X':
                 board[0][0] = 'X'
