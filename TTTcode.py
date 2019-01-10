@@ -31,39 +31,39 @@ def choice():
         if ['X', 'X', 'X'] in board:
             print("Player X is the winner!")
             break
-        if ['O', 'O', 'O'] in board:
+        elif ['O', 'O', 'O'] in board:
             print("Player O is the winner!")
             break
-        if board[0][0] and board[1][0] and board[2][0] == 'X' and 'X' and 'X':
+        elif board[0][0] and board[1][0] and board[2][0] == 'X' and 'X' and 'X':
             print("Player X is the winner!")
             break
-        if board[0][1] and board[1][1] and board[2][1] == 'X' and 'X' and 'X':
+        elif board[0][1] and board[1][1] and board[2][1] == 'X' and 'X' and 'X':
             print("Player X is the winner!")
             break
-        if board[0][2] and board[1][2] and board[2][2] == 'X' and 'X' and 'X':
+        elif board[0][2] and board[1][2] and board[2][2] == 'X' and 'X' and 'X':
             print("Player X is the winner!")
             break
-        if board[0][0] and board[1][0] and board[2][0] == 'O' and 'O' and 'O':
+        elif board[0][0] and board[1][0] and board[2][0] == 'O' and 'O' and 'O':
             print("Player O is the winner!")
             break
-        if board[0][1] and board[1][1] and board[2][1] == 'O' and 'O' and 'O':
+        elif board[0][1] and board[1][1] and board[2][1] == 'O' and 'O' and 'O':
             print("Player O is the winner!")
             break
-        if board[0][2] and board[1][2] and board[2][2] == 'O' and 'O' and 'O':
+        elif board[0][2] and board[1][2] and board[2][2] == 'O' and 'O' and 'O':
             print("Player O is the winner!")
             break
         # Two options diagonal across with XXX:
-        if board[0][0] == 'X' and board[1][1] == 'X' and board[2][2] == 'X':
+        elif board[0][0] == 'X' and board[1][1] == 'X' and board[2][2] == 'X':
             print("Player X is the winner!")
             break
-        if board[0][2] == 'X' and board[1][1] == 'X' and board[2][0] == 'X':
+        elif board[0][2] == 'X' and board[1][1] == 'X' and board[2][0] == 'X':
             print("Player X is the winner!")
             break
         # Two options diagonal across with OOO:
-        if board[0][0] == 'O' and board[1][1] == 'O' and board[2][2] == 'O':
+        elif board[0][0] == 'O' and board[1][1] == 'O' and board[2][2] == 'O':
             print("Player O is the winner!")
             break
-        if board[0][2] == 'O' and board[1][1] == 'O' and board[2][0] == 'O':
+        elif board[0][2] == 'O' and board[1][1] == 'O' and board[2][0] == 'O':
             print("Player O is the winner!")
             break
 
