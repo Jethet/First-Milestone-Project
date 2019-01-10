@@ -25,7 +25,9 @@ player()
 # If the player wants to play, a new board is created.
 new_board()
 
+# Player can choose a square.
 # If player chooses a square, the choice is shown on the board.
+# The chosen square should be blocked.
 choice()
 
 # The player who gets three marks in a row is declared the winner.
