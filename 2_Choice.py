@@ -13,15 +13,18 @@ def choice():
     with open('board', mode = 'wb') as my_file:  #this is meant to save the board
         pickle.dump(board, my_file)
 
+    player = 'X' or 'O'
+    square = ['1', '2', '3', '4', '5', '6', '7', '8', '9'] #3 x 3 squares on board
+    square_taken = []
     while True:
-        player = 'X' or 'O'
-        square = ['1', '2', '3', '4', '5', '6', '7', '8', '9'] #3 x 3 squares on board
-        square_taken = []
         player = input("Are you player X or player O? ")
         if player != 'X' and player != 'O':
             print("This is not a valid choice.")
             break
         choice = input("Where do you place your mark? ")
+        print(square_taken)
+        print(choice)
+        print(choice in square_taken)
         if choice in square_taken:
             print("This square is taken.")
             continue
@@ -29,10 +32,12 @@ def choice():
             if choice == '1' and player == 'X':
                 board[0][0] = 'X'
                 square_taken.append('1') #the chosen square is no longer an option
+                print(square_taken)
                 print(board)
             elif choice == '2' and player == 'X':
                 board[0][1] = 'X'
                 square_taken.append('2')
+                print(square_taken)
                 print(board)
             elif choice == '3' and player == 'X':
                 board[0][2] = 'X'
