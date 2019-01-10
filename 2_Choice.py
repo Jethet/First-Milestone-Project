@@ -2,9 +2,34 @@
 # Each time a choice has been made, the board is printed and the player
 # is asked if s/he is player X or player O, and what square they choose.
 import pickle
+from beautifultable import BeautifulTable   #this creates 3 x 3 table = board
+board = BeautifulTable()
+board.append_row(['1', '2', '3'])
+board.append_row(['4', '5', '6'])
+board.append_row(['7', '8', '9'])
+print(board)
+
+def board_coordinates(square):
+    if square == '1':
+        return (0,0)
+    elif square == '2':
+        return (0,1)
+    elif square == '3':
+        return (0,2)
+    elif square == '4':
+        return (1,0)
+    elif square == '5':
+        return (1,1)
+    elif square == '6':
+        return (1,2)
+    elif square == '7':
+        return (2,0)
+    elif square == '8':
+        return (2,1)
+    elif square == '9':
+        return (2,2)
 
 def choice():
-    from beautifultable import BeautifulTable   #this creates 3 x 3 table = board
     board = BeautifulTable()
     board.append_row(['1', '2', '3'])
     board.append_row(['4', '5', '6'])
