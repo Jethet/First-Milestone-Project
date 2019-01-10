@@ -1,8 +1,18 @@
 # This is the function that returns the choice of a square on the board.
 # Each time a choice has been made, the board is printed and the player
 # is asked if s/he is player X or player O, and what square they choose.
+import pickle
 
 def choice():
+    from beautifultable import BeautifulTable   #this creates 3 x 3 table = board
+    board = BeautifulTable()
+    board.append_row(['1', '2', '3'])
+    board.append_row(['4', '5', '6'])
+    board.append_row(['7', '8', '9'])
+    print(board)
+    with open('board', mode = 'wb') as my_file:  #this is meant to save the board
+        pickle.dump(board, my_file)
+
     while True:
         player = 'X' or 'O'
         square = ['1', '2', '3', '4', '5', '6', '7', '8', '9'] #3 x 3 squares on board
@@ -89,3 +99,5 @@ def choice():
     # Save board changes
     with open('board', mode = 'wb') as my_file:
         pickle.dump(board, my_file)
+
+choice()
