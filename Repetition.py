@@ -14,6 +14,14 @@ def choice():
     if choice in square_taken:
         print("This square is taken.")
         continue
+    choice = input("Where do you place your mark? ")
+    if choice in square_taken:
+        print("This square is taken.")
+        continue
+    elif choice not in square_taken:
+        if choice == '1' and player == 'X':
+            board[0][0] = 'X'
+            square_taken.append('1')
     if player == 'X':
         print('X')
     elif player == 'O':
@@ -22,6 +30,7 @@ def choice():
 """
 import pickle
 from beautifultable import BeautifulTable   #this creates 3 x 3 table = board
+square_taken = []
 
 def board_coordinates(square):
     board = BeautifulTable()
@@ -32,10 +41,13 @@ def board_coordinates(square):
     with open('board', mode = 'wb') as my_file:  #this is meant to save the board
         pickle.dump(board, my_file)
     if square == '1':
+        square_taken.append('1')
         return (0,0)
     elif square == '2':
+        square_taken.append('2')
         return (0,1)
     elif square == '3':
+        square_taken.append('3')
         return (0,2)
     elif square == '4':
         return (1,0)
