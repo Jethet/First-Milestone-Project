@@ -48,5 +48,3 @@ board_coordinates()
 
 # The player who gets three marks in a row is declared the winner.
 winner()
-
-# There is a problem between Atom and Github. Can I solve this by push/pull?
