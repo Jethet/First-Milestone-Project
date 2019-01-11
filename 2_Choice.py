@@ -1,6 +1,8 @@
 # This is the function that returns the choice of a square on the board.
 # Each time a choice has been made, the board is printed and the player
 # is asked if s/he is player X or player O, and what square they choose.
+# This function is part of main()
+
 import pickle
 from beautifultable import BeautifulTable   #this creates 3 x 3 table = board
 board = BeautifulTable()
