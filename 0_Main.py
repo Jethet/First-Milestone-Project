@@ -42,6 +42,10 @@ def new_board():
 # The chosen square should be blocked.
 choice()
 
+# Choice of player needs to be translated into position on 3 x 3 board
+board_coordinates()
+
+
 # The player who gets three marks in a row is declared the winner.
 winner()
 
