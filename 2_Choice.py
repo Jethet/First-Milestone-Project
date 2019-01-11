@@ -9,26 +9,6 @@ board.append_row(['4', '5', '6'])
 board.append_row(['7', '8', '9'])
 print(board)
 
-def board_coordinates(square):
-    if square == '1':
-        return (0,0)
-    elif square == '2':
-        return (0,1)
-    elif square == '3':
-        return (0,2)
-    elif square == '4':
-        return (1,0)
-    elif square == '5':
-        return (1,1)
-    elif square == '6':
-        return (1,2)
-    elif square == '7':
-        return (2,0)
-    elif square == '8':
-        return (2,1)
-    elif square == '9':
-        return (2,2)
-
 def choice():
     board = BeautifulTable()
     board.append_row(['1', '2', '3'])
@@ -57,12 +37,12 @@ def choice():
             if choice == '1' and player == 'X':
                 board[0][0] = 'X'
                 square_taken.append('1') #the chosen square is no longer an option
-                #print(square_taken)
+                print(square_taken)
                 print(board)
             elif choice == '2' and player == 'X':
                 board[0][1] = 'X'
                 square_taken.append('2')
-                #print(square_taken)
+                print(square_taken)
                 print(board)
             elif choice == '3' and player == 'X':
                 board[0][2] = 'X'
