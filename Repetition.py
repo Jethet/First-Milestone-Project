@@ -1,3 +1,5 @@
+# This file is used to work on functions that can take
+#   out some of the repetition in the current code
 # Function for choice of squares
 # Function for translating squares into position in board
 # Function to activate X or O player
