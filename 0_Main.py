@@ -42,9 +42,37 @@ def new_board():
 # The chosen square should be blocked.
 choice()
 
-# Choice of player needs to be translated into position on 3 x 3 board
-board_coordinates()
-
+# Number that player chooses needs to be translated into position on 3 x 3 board
+def board_coordinates(choice):
+    while True:
+        choice = input("Where do you place your mark? ")
+        if choice == '1':
+            square_taken.append('1')
+            return (0,0)
+        elif choice == '2':
+            square_taken.append('2')
+            return (0,1)
+        elif choice == '3':
+            square_taken.append('3')
+            return (0,2)
+        elif choice == '4':
+            square_taken.append('4')
+            return (1,0)
+        elif choice == '5':
+            square_taken.append('5')
+            return (1,1)
+        elif choice == '6':
+            square_taken.append('6')
+            return (1,2)
+        elif choice == '7':
+            square_taken.append('7')
+            return (2,0)
+        elif choice == '8':
+            square_taken.append('8')
+            return (2,1)
+        elif choice == '9':
+            square_taken.append('9')
+            return (2,2)
 
 # The player who gets three marks in a row is declared the winner.
 winner()

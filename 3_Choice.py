@@ -12,11 +12,6 @@ board.append_row(['7', '8', '9'])
 print(board)
 
 def choice():
-    board = BeautifulTable()
-    board.append_row(['1', '2', '3'])
-    board.append_row(['4', '5', '6'])
-    board.append_row(['7', '8', '9'])
-    print(board)
     with open('board', mode = 'wb') as my_file:  #this is meant to save the board
         pickle.dump(board, my_file)
 
