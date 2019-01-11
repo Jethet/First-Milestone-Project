@@ -1,6 +1,7 @@
 # This function returns a 'winner!' message if a player has won the game.
 # There are many options for getting three X or three O in a row: horizontal,
 # vertical or diagonal.
+# This function is part of main()
 
 def winner():
     # Two options diagonal across with XXX:
