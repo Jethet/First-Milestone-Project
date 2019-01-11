@@ -20,10 +20,22 @@ with open('board', mode = 'wb') as my_file:  #this saves the board
 
 # First step is ask players if they want to play.
 # Player is asked to choose X or O; player X starts.
-player()
+def player():
+    player = input("Are you player X or player O? ")
+    if player != 'X' and player != 'O':
+        print("This is not a valid choice.")
+        break
+    else:
+        player == 'X' or player == 'O'
 
 # If the player wants to play, a new board is created.
-new_board()
+def new_board():
+    from beautifultable import BeautifulTable
+    board = BeautifulTable()
+    board.append_row(['1', '2', '3'])
+    board.append_row(['4', '5', '6'])
+    board.append_row(['7', '8', '9'])
+    print(board, '\n')
 
 # Player can choose a square.
 # If player chooses a square, the choice is shown on the board.

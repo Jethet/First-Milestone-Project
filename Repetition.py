@@ -60,16 +60,22 @@ def board_coordinates(choice):
                 square_taken.append('3')
                 return (0,2)
             elif choice == '4':
+                square_taken.append('4')
                 return (1,0)
             elif choice == '5':
+                square_taken.append('5')
                 return (1,1)
             elif choice == '6':
+                square_taken.append('6')
                 return (1,2)
             elif choice == '7':
+                square_taken.append('7')
                 return (2,0)
             elif choice == '8':
+                square_taken.append('8')
                 return (2,1)
             elif choice == '9':
+                square_taken.append('9')
                 return (2,2)
 
 first_element, second_element = board_coordinates('1')

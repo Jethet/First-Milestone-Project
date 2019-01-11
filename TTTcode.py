@@ -71,6 +71,9 @@ def choice():
         if player != 'X' and player != 'O':
             print("This is not a valid choice.")
             break
+        else:
+            player == 'X' or player == 'O'
+
 
         choice = input("Where do you place your mark? ")
         if choice in square_taken:
