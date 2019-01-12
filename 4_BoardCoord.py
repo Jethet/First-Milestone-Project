@@ -1,6 +1,7 @@
 # This is the extended version, to be able to run for testing
 
 def board_coordinates(choice):
+    # This is only needed to test the function but should not be in main()
     board = BeautifulTable()
     board.append_row(['1', '2', '3'])
     board.append_row(['4', '5', '6'])
@@ -14,6 +15,7 @@ def board_coordinates(choice):
                 print("This is not a valid choice.")
                 break
             choice = input("Where do you place your mark? ")
+            # This is where the function begins:
             if choice == '1':
                 square_taken.append('1')
                 #print(square_taken)
