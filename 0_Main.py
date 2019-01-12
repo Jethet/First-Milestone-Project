@@ -73,6 +73,9 @@ def board_coordinates(choice):
         elif choice == '9':
             square_taken.append('9')
             return (2,2)
+        # Save board changes
+        with open('board', mode = 'wb') as my_file:
+            pickle.dump(board, my_file)
 
 # The player who gets three marks in a row is declared the winner.
 winner()
