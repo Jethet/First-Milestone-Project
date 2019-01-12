@@ -1,10 +1,11 @@
 """
 This is the main() function of the code for the game TicTacToe.
 Two players can play the game, sitting at the same computer.
-The board should be printed out every time a player has made a move.
+The board should be printed every time a player has made a move.
 The programme should accept input from the player, determine the
-position and then place a symbol on the board. Subsequently, that
-position should not be available anymore.
+position and then place a symbol on that board position. Subsequently,
+that position should not be available anymore.
+The player who is the first to have three (X or O) in a row, is the winner.
 """
 
 # This is an explanation of the game.
