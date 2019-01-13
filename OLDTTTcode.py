@@ -1,3 +1,9 @@
+"""
+Missing code: the choice of the square needs to be simplified with function
+board_coordinates(). This function generates two values but I do not know how
+to get these linked to the board squares ....
+"""
+
 import pickle
 
 def choice():
