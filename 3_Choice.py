@@ -59,6 +59,7 @@ def choice():
             print("This square is taken.")
             continue
         if choice not in square_taken:
+
 # HERE the programme should a) determine the coordinates and b) the player
 # The board_coordinates can be used for X and for O but how??
 # And how to use the function board_coordinates inside choice()??
