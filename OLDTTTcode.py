@@ -36,106 +36,123 @@ def choice():
         if player != 'X' and player != 'O':
             print("This is not a valid choice.")
             break
-        choice = input("Where do you place your mark? ")
-        if player == 'X' or player == 'O':
+        if player == 'X':
             # Two options diagonal three in a row:
             if board[0][0] and board[1][1] == board[2][2]:
-                print(player, " is the winner!")
+                print(player, "is the winner!")
                 break
             elif board[0][2] and board[1][1] == board[2][0]:
-                print(player, " is the winner!")
+                print(player, "is the winner!")
                 break
             # Three options vertical three in a row:
             if board[0][0] and board[1][0] == board[2][0]:
-                print(player, " is the winner!")
+                print(player, "is the winner!")
                 break
             elif board[0][1] and board[1][1] == board[2][1]:
-                print(player, " is the winner!")
+                print(player, "is the winner!")
                 break
             elif board[0][2] and board[1][2] == board[2][2]:
-                print(player, " is the winner!")
+                print(player, "is the winner!")
                 break
 
-            if choice in square_taken:
-                print("This square is taken.")
-                continue
-            elif choice not in square_taken:
-                if choice == '1' and player == 'X':
-                    board[0][0] = 'X'
-                    square_taken.append('1') #the chosen square is no longer an option
-                    #print(square_taken)
-                    print(board)
-                elif choice == '2' and player == 'X':
-                    board[0][1] = 'X'
-                    square_taken.append('2')
-                    #print(square_taken)
-                    print(board)
-                elif choice == '3' and player == 'X':
-                    board[0][2] = 'X'
-                    square_taken.append('3')
-                    print(board)
-                elif choice == '4' and player == 'X':
-                    board[1][0] = 'X'
-                    square_taken.append('4')
-                    print(board)
-                elif choice == '5' and player == 'X':
-                    board[1][1] = 'X'
-                    square_taken.append('5')
-                    print(board)
-                elif choice == '6' and player == 'X':
-                    board[1][2] = 'X'
-                    square_taken.append('6')
-                    print(board)
-                elif choice == '7' and player == 'X':
-                    board[2][0] = 'X'
-                    square_taken.append('7')
-                    print(board)
-                elif choice == '8' and player == 'X':
-                    board[2][1] = 'X'
-                    square_taken.append('8')
-                    print(board)
-                elif choice == '9' and player == 'X':
-                    board[2][2] = 'X'
-                    square_taken.append('9')
-                    print(board)
-                elif choice == '1' and player == 'O':
-                    board[0][0] = 'O'
-                    square_taken.append('1')
-                    print(board)
-                elif choice == '2' and player == 'O':
-                    board[0][1] = 'O'
-                    square_taken.append('2')
-                    print(board)
-                elif choice == '3' and player == 'O':
-                    board[0][2] = 'O'
-                    square_taken.append('3')
-                    print(board)
-                elif choice == '4' and player == 'O':
-                    board[1][0] = 'O'
-                    square_taken.append('4')
-                    print(board)
-                elif choice == '5' and player == 'O':
-                    board[1][1] = 'O'
-                    square_taken.append('5')
-                    print(board)
-                elif choice == '6' and player == 'O':
-                    board[1][2] = 'O'
-                    square_taken.append('6')
-                    print(board)
-                elif choice == '7' and player == 'O':
-                    board[2][0] = 'O'
-                    square_taken.append('7')
-                    print(board)
-                elif choice == '8' and player == 'O':
-                    board[2][1] = 'O'
-                    square_taken.append('8')
-                    print(board)
-                elif choice == '9' and player == 'O':
-                    board[2][2] = 'O'
-                    square_taken.append('9')
-                    print(board)
-                else:
-                    print("This is not a valid choice.")
-                    return
+        if player == 'O':
+            if board[0][0] and board[1][1] == board[2][2]:
+                print(player, "is the winner!")
+                break
+            elif board[0][2] and board[1][1] == board[2][0]:
+                print(player, "is the winner!")
+                break
+            if board[0][0] and board[1][0] == board[2][0]:
+                print(player, "is the winner!")
+                break
+            elif board[0][1] and board[1][1] == board[2][1]:
+                print(player, "is the winner!")
+                break
+            elif board[0][2] and board[1][2] == board[2][2]:
+                print(player, "is the winner!")
+                break
+
+        choice = input("Where do you place your mark? ")
+        if choice in square_taken:
+            print("This square is taken.")
+            continue
+        elif choice not in square_taken:
+            if choice == '1' and player == 'X':
+                board[0][0] = 'X'
+                square_taken.append('1') #the chosen square is no longer an option
+                #print(square_taken)
+                print(board)
+            elif choice == '2' and player == 'X':
+                board[0][1] = 'X'
+                square_taken.append('2')
+                #print(square_taken)
+                print(board)
+            elif choice == '3' and player == 'X':
+                board[0][2] = 'X'
+                square_taken.append('3')
+                print(board)
+            elif choice == '4' and player == 'X':
+                board[1][0] = 'X'
+                square_taken.append('4')
+                print(board)
+            elif choice == '5' and player == 'X':
+                board[1][1] = 'X'
+                square_taken.append('5')
+                print(board)
+            elif choice == '6' and player == 'X':
+                board[1][2] = 'X'
+                square_taken.append('6')
+                print(board)
+            elif choice == '7' and player == 'X':
+                board[2][0] = 'X'
+                square_taken.append('7')
+                print(board)
+            elif choice == '8' and player == 'X':
+                board[2][1] = 'X'
+                square_taken.append('8')
+                print(board)
+            elif choice == '9' and player == 'X':
+                board[2][2] = 'X'
+                square_taken.append('9')
+                print(board)
+            elif choice == '1' and player == 'O':
+                board[0][0] = 'O'
+                square_taken.append('1')
+                print(board)
+            elif choice == '2' and player == 'O':
+                board[0][1] = 'O'
+                square_taken.append('2')
+                print(board)
+            elif choice == '3' and player == 'O':
+                board[0][2] = 'O'
+                square_taken.append('3')
+                print(board)
+            elif choice == '4' and player == 'O':
+                board[1][0] = 'O'
+                square_taken.append('4')
+                print(board)
+            elif choice == '5' and player == 'O':
+                board[1][1] = 'O'
+                square_taken.append('5')
+                print(board)
+            elif choice == '6' and player == 'O':
+                board[1][2] = 'O'
+                square_taken.append('6')
+                print(board)
+            elif choice == '7' and player == 'O':
+                board[2][0] = 'O'
+                square_taken.append('7')
+                print(board)
+            elif choice == '8' and player == 'O':
+                board[2][1] = 'O'
+                square_taken.append('8')
+                print(board)
+            elif choice == '9' and player == 'O':
+                board[2][2] = 'O'
+                square_taken.append('9')
+                print(board)
+            else:
+                print("This is not a valid choice.")
+                return
 
 choice()
