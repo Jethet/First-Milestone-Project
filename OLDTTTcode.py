@@ -26,11 +26,12 @@ def choice():
         square = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
         square_taken = []
         player = 'X' or 'O'
+        # Two diagonal, three horizontal and three vertical options winner:
         if board[0][0] and board[1][1] == board[2][2] or board[0][2] and \
            board[1][1] == board[2][0] or board[0][0] and board[0][1] == \
            board[0][2] or board[1][0] and board[1][1] == board[1][2] or \
            board[2][0] and board[2][1] == board[2][2] or board[0][0] and \
-           board[1][0] == board[2][0] or board[0][1] and board[1][1]
+           board[1][0] == board[2][0] or board[0][1] and board[1][1] \
            == board[2][1] or board[0][2] and board[1][2] == board[2][2]:
             if player == 'X':
                 print("Player X is the winner!")
