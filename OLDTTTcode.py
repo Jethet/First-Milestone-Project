@@ -25,17 +25,24 @@ def choice():
     while True:
         square = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
         square_taken = []
-        if ['X', 'X', 'X'] in board:
-            print("Player X is the winner!")
-            break
-        if ['O', 'O', 'O'] in board:
-            print("Player O is the winner!")
-            break
-
         player = input("Are you player X or player O? ")
         if player != 'X' and player != 'O':
             print("This is not a valid choice.")
             break
+        if board[0][0] and board[1][1] == board[2][2] or
+            board[0][2] and board[1][1] == board[2][0]:
+            if player == 'X':
+                print("Player X is the winner!")
+            elif player == 'O':
+                print("Player O is the winner!")
+        elif board[0][0] and board[0][1] == board[0][2] or
+              board[1][0] and board[1][1] == board[1][2] or
+               board[2][0] and board[2][1] == board[2][2]:
+               if player == 'X':
+                   print("Player X is the winner!")
+               elif player == 'O':
+                   print("Player O is the winner!")
+
         if player == 'X':
             # Two options diagonal three in a row:
             if board[0][0] and board[1][1] == board[2][2]:
