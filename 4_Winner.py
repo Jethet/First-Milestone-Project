@@ -12,8 +12,8 @@ def winner():
           == board[2][1] or board[0][2] and board[1][2] == board[2][2] \
           and player == 'X':
         print("Player X is the winner!")
-    break
-    if board[0][0] and board[1][1] == board[2][2] or board[0][2] and \
+        break
+    elif board[0][0] and board[1][1] == board[2][2] or board[0][2] and \
           board[1][1] == board[2][0] or board[0][0] and board[0][1] == \
           board[0][2] or board[1][0] and board[1][1] == board[1][2] or \
           board[2][0] and board[2][1] == board[2][2] or board[0][0] and \
@@ -21,6 +21,6 @@ def winner():
           == board[2][1] or board[0][2] and board[1][2] == board[2][2] \
           and player == 'O':
         print("Player O is the winner!")
-    break
+        break
 
 winner()
