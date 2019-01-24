@@ -23,11 +23,10 @@ with open('board', mode = 'wb') as my_file:  #this saves the board
 # Player is asked to choose X or O; player X starts.
 def player():
     player = input("Are you player X or player O? ")
-    if player != 'X' and player != 'O':
-        print("This is not a valid choice.")
-        break
-    else:
-        player == 'X' or player == 'O'
+    while player != 'X' and player != 'O':
+        print("This is not a valid choice. ")
+        player = input("Are you player X or player O? ")
+    return player
 
 # If the player wants to play, a new board is created.
 def new_board():
@@ -37,49 +36,44 @@ def new_board():
     board.append_row(['4', '5', '6'])
     board.append_row(['7', '8', '9'])
     print(board, '\n')
+    return board
 
 # Player can choose a square.
 # If player chooses a square, the choice is shown on the board.
 # The chosen square should be blocked.
-choice()
+def choice(player, board):
+    # make a list of squares that can be chosen
+    list_available_squares = open_square(board)
+    # ask the player for her/his choice
+    player_choice = input("Where do you place your mark? ")
+    # check if choice is in the list of squares
+    # if choice not in list of squares, player must choose again
+    while player_choice not in list_available_squares:
+        print("This square is taken. ")
+        player_choice = input("Where do you place your mark? ")
+    # choice is translated into board_coordinates
+    board_coordinates = transform_choice(choice)
+    # show choice on the board
+    updated_board = update_board(player, board_coordinates, board)
+    print(updated_board)
+    return updated_board
 
-# Number that player chooses needs to be translated into position on 3 x 3 board
-def board_coordinates(choice):
-    while True:
-        choice = input("Where do you place your mark? ")
-        if choice == '1':
-            square_taken.append('1')
-            return (0,0)
-        elif choice == '2':
-            square_taken.append('2')
-            return (0,1)
-        elif choice == '3':
-            square_taken.append('3')
-            return (0,2)
-        elif choice == '4':
-            square_taken.append('4')
-            return (1,0)
-        elif choice == '5':
-            square_taken.append('5')
-            return (1,1)
-        elif choice == '6':
-            square_taken.append('6')
-            return (1,2)
-        elif choice == '7':
-            square_taken.append('7')
-            return (2,0)
-        elif choice == '8':
-            square_taken.append('8')
-            return (2,1)
-        elif choice == '9':
-            square_taken.append('9')
-            return (2,2)
-        # Save board changes
-        with open('board', mode = 'wb') as my_file:
-            pickle.dump(board, my_file)
+def open_square(board):
+    available_square = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
+    # TO DO: calculate available squares
+    return available_square
+
+def transform_choice(choice):
+    # TO DO: write board_coordinates
+    return (0,0)
+
+def update_board(player, board_coordinates, board):
+    # adapt board by adding player choice on relevant square
+    # TO DO: code for updating board
+    return updated_board
 
 # The player who gets three marks in a row is declared the winner.
-def winner():
+def winner(board):
     player = 'X' or 'O'
     if board[0][0] and board[1][1] == board[2][2] or board[0][2] and \
        board[1][1] == board[2][0] or board[0][0] and board[0][1] == \
@@ -89,7 +83,7 @@ def winner():
        == board[2][1] or board[0][2] and board[1][2] == board[2][2]:
         if player == 'X':
             print("Player X is the winner!")
-            break
+            return 'X'
         elif player == 'O':
             print("Player O is the winner!")
-            break
+            return 'O'
