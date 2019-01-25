@@ -53,18 +53,27 @@ def choice(player, board):
     while player_choice not in list_available_squares:
         print("This square is taken. ")
         player_choice = input("Where do you place your mark? ")
-        
+
     # choice is translated into board_coordinates
     board_coordinates = transform_choice(choice)
     # show choice on the board
     updated_board = update_board(player, board_coordinates, board)
     print(updated_board)
     return updated_board
-
-def open_square(board):
+"""
+The following functions have been created new: open_square(), transform_choice()
+and update_board()
+"""
+def open_square():
+    player_choice = input("Where do you place your mark? ")
     available_square = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
-    # TO DO: calculate available squares
-    return available_square
+    while player_choice not in available_square:
+        print("This is not a valid choice. ")
+        player_choice = input("Where do you place your mark? ")
+
+    if player_choice in available_square:
+        available_square.remove(player_choice)
+        return available_square
 
 def transform_choice(choice):
     # TO DO: write board_coordinates
