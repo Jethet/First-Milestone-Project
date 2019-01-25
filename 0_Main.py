@@ -46,13 +46,9 @@ def choice(player, board):
     player_choice = input("Where do you place your mark? ")
 
     # make a list of squares that can be chosen
-    list_available_squares = open_square(board)
-
     # check if choice is in the list of squares
     # if choice not in list of squares, player must choose again
-    while player_choice not in list_available_squares:
-        print("This square is taken. ")
-        player_choice = input("Where do you place your mark? ")
+    list_available_squares = open_square()
 
     # choice is translated into board_coordinates
     board_coordinates = transform_choice(choice)
@@ -63,6 +59,8 @@ def choice(player, board):
 """
 The following functions have been created new: open_square(), transform_choice()
 and update_board()
+Originally, 'board' was added as parameter in open_square() but I have taken
+this out because I do not think it is necessary.
 """
 def open_square():
     player_choice = input("Where do you place your mark? ")
