@@ -27,7 +27,7 @@ def update_board():
 
     #This is the actual code to update the board:
     if board_coordinates == (0,0) and player == 'X':
-        board[0][0] == 'X'
+        board[0][0] = 'X'
         print(board)
     elif board_coordinates == (0,1) and player == 'X':
         board[0][1] = 'X'
