@@ -1,33 +1,14 @@
-# This file is used to work on functions that can take
-#   out some of the repetition in the current code
-# Function for choice of squares
 # Function for translating squares into position in board
 # Function to activate X or O player
-"""
-square = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
-square_taken = []
-choice = input("Where do you place your mark? ")
-player = input("Are you player X or player O? ")
 
-def choice():
-    if player != 'X' and player != 'O':
-        print("This is not a valid choice.")
-        break
-    if choice in square_taken:
-        print("This square is taken.")
-        continue
-    choice = input("Where do you place your mark? ")
-    if choice in square_taken:
-        print("This square is taken.")
-        continue
-    elif choice not in square_taken:
-        if choice == '1' and player == 'X':
-            board[0][0] = 'X'
-            square_taken.append('1')
-    if player == 'X':
-        print('X')
-    elif player == 'O':
-        print('O')
+board_squares = {1:(0,0), 2:(0,1), 3:(0,2), 4:(1,0), 5:(1,1), 6:(1,2),\
+                      7:(2,0), 8:(2,1), 9:(2,2)}
+player_choice = int(input("Where do you place your mark? "))
+##print(player_choice)
+board_coordinates = board_squares.get(player_choice)
+print(board_coordinates)
+
+
 
 """
 import pickle
@@ -84,3 +65,4 @@ first_element, second_element = board_coordinates('1')
 print(first_element, second_element)
 
 board_coordinates(square)
+"""
