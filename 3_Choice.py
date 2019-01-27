@@ -20,7 +20,6 @@ def choice(player, board):
     print(updated_board)
     return updated_board
 
-
 def open_square(board):
     # Calculate available squares
     player_choice = input("Where do you place your mark? ")
