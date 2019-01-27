@@ -16,7 +16,7 @@ def update_board():
         print("This is not a valid choice. ")
         player = input("Are you player X or player O? ")
     #return player
-    player_choice = input("Where do you place your mark? ")
+    player_choice = int(input("Where do you place your mark? "))
     #return player_choice
     #THIS CODE IS ADDED FOR TESTING, SHOULD BE ONLY board_coordinates()
     board_squares = {1:(0,0), 2:(0,1), 3:(0,2), 4:(1,0), 5:(1,1), 6:(1,2),\
@@ -26,7 +26,6 @@ def update_board():
 
     #This is the actual code to update the board:
     if board_coordinates == (0,0) and player == 'X':
-        print(board_coordinates)
         board[0][0] = 'X'
         print(board)
     """
