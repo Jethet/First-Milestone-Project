@@ -16,45 +16,48 @@ def update_board():
         print("This is not a valid choice. ")
         player = input("Are you player X or player O? ")
     #return player
-    player_choice = int(input("Where do you place your mark? "))
-    #return player_choice
-    #THIS CODE IS ADDED FOR TESTING, SHOULD BE ONLY board_coordinates()
-    board_squares = {1:(0,0), 2:(0,1), 3:(0,2), 4:(1,0), 5:(1,1), 6:(1,2),\
-                          7:(2,0), 8:(2,1), 9:(2,2)}
-    board_coordinates = board_squares.get(player_choice)
+    while True:
+        player_choice = int(input("Where do you place your mark? "))
+        #return player_choice
+        #THIS CODE IS ADDED FOR TESTING, SHOULD BE ONLY board_coordinates()
+        board_squares = {1:(0,0), 2:(0,1), 3:(0,2), 4:(1,0), 5:(1,1), 6:(1,2),\
+                              7:(2,0), 8:(2,1), 9:(2,2)}
+        board_coordinates = board_squares.get(player_choice)
+
+    
+        #This is the actual code to update the board:
+        if board_coordinates == (0,0):
+            board[0][0] = player
+            print(board)
+        elif board_coordinates == (0,1):
+            board[0][1] = player
+            print(board)
+        elif board_coordinates == (0,2):
+            board[0][2] = player
+            print(board)
+        elif board_coordinates == (1,0):
+            board[1][0] = player
+            print(board)
+        elif board_coordinates == (1,1):
+            board[1][1] = player
+            print(board)
+        elif board_coordinates == (1,2):
+            board[1][2] = player
+            print(board)
+        elif board_coordinates == (2,0):
+            board[2][0] = player
+            print(board)
+        elif board_coordinates == (2,1):
+            board[2][1] = player
+            print(board)
+        elif board_coordinates == (2,2):
+            board[2][2] = player
+            print(board)
+        else:
+            print("This is not a valid choice")
 
 
-    #This is the actual code to update the board:
-    if board_coordinates == (0,0) and player == 'X':
-        board[0][0] = 'X'
-        print(board)
-    """
-    elif board_coordinates == (0,1) and player == 'X':
-        board[0][1] = 'X'
-        print(board)
-    elif board_coordinates == (0,2) and player == 'X':
-        board[0][2] = 'X'
-        print(board)
-    elif board_coordinates == (1,0) and player == 'X':
-        board[1][0] = 'X'
-        print(board)
-    elif board_coordinates == (1,1) and player == 'X':
-        board[1][1] = 'X'
-        print(board)
-    elif board_coordinates == (1,2) and player == 'X':
-        board[1][2] = 'X'
-        print(board)
-    elif board_coordinates == (2,0) and player == 'X':
-        board[2][0] = 'X'
-        print(board)
-    elif board_coordinates == (2,1) and player == 'X':
-        board[2][1] = 'X'
-        print(board)
-    elif board_coordinates == (2,2) and player == 'X':
-        board[2][2] = 'X'
-        print(board)
+        return True
 
-    return board
-    """
 
-print(update_board())
+update_board()
