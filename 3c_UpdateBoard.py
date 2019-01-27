@@ -22,13 +22,14 @@ def update_board():
     board_squares = {1:(0,0), 2:(0,1), 3:(0,2), 4:(1,0), 5:(1,1), 6:(1,2),\
                           7:(2,0), 8:(2,1), 9:(2,2)}
     board_coordinates = board_squares.get(player_choice)
-    return board_coordinates
-    print(board_coordinates)
+
 
     #This is the actual code to update the board:
     if board_coordinates == (0,0) and player == 'X':
+        print(board_coordinates)
         board[0][0] = 'X'
         print(board)
+    """
     elif board_coordinates == (0,1) and player == 'X':
         board[0][1] = 'X'
         print(board)
@@ -55,5 +56,6 @@ def update_board():
         print(board)
 
     return board
+    """
 
 print(update_board())
