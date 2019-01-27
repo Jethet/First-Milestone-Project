@@ -81,7 +81,35 @@ def transform_choice(choice):
 
 def update_board(player, board_coordinates, board):
     # adapt board by adding player choice on relevant square
-    # TO DO: code for updating board
+    if board_coordinates == (0,0):
+        board[0][0] = player
+        print(board)
+    elif board_coordinates == (0,1):
+        board[0][1] = player
+        print(board)
+    elif board_coordinates == (0,2):
+        board[0][2] = player
+        print(board)
+    elif board_coordinates == (1,0):
+        board[1][0] = player
+        print(board)
+    elif board_coordinates == (1,1):
+        board[1][1] = player
+        print(board)
+    elif board_coordinates == (1,2):
+        board[1][2] = player
+        print(board)
+    elif board_coordinates == (2,0):
+        board[2][0] = player
+        print(board)
+    elif board_coordinates == (2,1):
+        board[2][1] = player
+        print(board)
+    elif board_coordinates == (2,2):
+        board[2][2] = player
+        print(board)
+    else:
+        print("This is not a valid choice.")
     return updated_board
 
 # The player who gets three marks in a row is declared the winner.
