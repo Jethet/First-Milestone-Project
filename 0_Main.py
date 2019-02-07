@@ -60,7 +60,7 @@ def choice(player, board):
 The following functions have been created new: open_square(), transform_choice()
 and update_board()
 Originally, 'board' was added as parameter in open_square() but I have taken
-this out because I do not think it is necessary.
+this out because I do not think it is necessary - or is it??
 """
 def open_square():
     player_choice = input("Where do you place your mark? ")
@@ -73,10 +73,10 @@ def open_square():
         available_square.remove(player_choice)
         return available_square
 
-def transform_choice(choice):
+def transform_choice(player_choice):
     board_squares = {1:(0,0), 2:(0,1), 3:(0,2), 4:(1.0), 5:(1,1), 6:(1,2),\
                           7:(2,0), 8:(2,1), 9:(2,2)}
-    board_coordinates = board_squares.get(choice)
+    board_coordinates = board_squares.get(player_choice)
     return board_coordinates
 
 def update_board(player, board_coordinates, board):
