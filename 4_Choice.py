@@ -3,6 +3,7 @@
 # The chosen square should be blocked.
 # If the choice is not valid, player chooses again.
 
+
 def choice(player, board):
     # make a list of squares that can be chosen
     list_available_squares = open_square(board)
@@ -72,4 +73,4 @@ def update_board(player, board_coordinates, board):
 
     return updated_board
 
-choice()
+choice('X',)
