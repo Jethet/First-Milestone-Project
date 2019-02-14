@@ -8,3 +8,4 @@ def transform_choice(choice):
     return board_coordinates
 
 print(transform_choice(9))
+print(transform_choice(5))
