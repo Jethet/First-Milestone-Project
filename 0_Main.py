@@ -9,7 +9,7 @@ The player who is the first to have three (X or O) in a row, is the winner.
 """
 
 # This is an explanation of the game.
-print("The board has 3 x 3 = 9 squares. You can play with X or with O."
+print("The board has 3 x 3 = 9 squares. You can be player X or O."
 " Each time you play you can mark one square.\n"
 "The player who gets three marks in a row (diagonal, horizontal or vertical)\n"
 "wins the game.\n")
