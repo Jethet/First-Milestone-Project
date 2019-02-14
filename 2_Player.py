@@ -3,10 +3,13 @@
 # This function is part of main()
 
 def player():
-    player = input("Are you player X or player O? ")
-    if player != 'X' and player != 'O':
-        print("This is not a valid choice.")
-        break
+    while True:
+        player = input("Are you player X or player O? ")
+        if player != 'X' and player != 'O':
+            print("This is not a valid choice. Choose X or O. ")
+        else:
+            print("You will be player", player, "for this game.")
+            break
 
 
 player()
