@@ -28,43 +28,45 @@ def update_board():
             while player_choice not in available_square:
                 print("This is not a valid choice. ")
                 player_choice = int(input("Where do you place your mark? "))
-            else:
-                return player_choice
+            #else:
+                #print(player_choice)
+                #return player_choice
 
-            #This is the actual code to update the board:
-                while player_choice in available_square:
-                    board_coordinates = board_squares.get(player_choice)
-                    return board_coordinates
+            #This is the actual code to update the board but it does not
+            # get executed (the player_choice above is returned/printed)
+            while player_choice in available_square:
+                board_coordinates = board_squares.get(player_choice)
+                return board_coordinates
 
-                    if board_coordinates == (0,0):
-                        board[0][0] = player
-                        print(board)
-                    elif board_coordinates == (0,1):
-                        board[0][1] = player
-                        print(board)
-                    elif board_coordinates == (0,2):
-                        board[0][2] = player
-                        print(board)
-                    elif board_coordinates == (1,0):
-                        board[1][0] = player
-                        print(board)
-                    elif board_coordinates == (1,1):
-                        board[1][1] = player
-                        print(board)
-                    elif board_coordinates == (1,2):
-                        board[1][2] = player
-                        print(board)
-                    elif board_coordinates == (2,0):
-                        board[2][0] = player
-                        print(board)
-                    elif board_coordinates == (2,1):
-                        board[2][1] = player
-                        print(board)
-                    elif board_coordinates == (2,2):
-                        board[2][2] = player
-                        print(board)
-                    else:
-                        print("This is not a valid choice.")
+                if board_coordinates == (0,0):
+                    board[0][0] = player
+                    print(board)
+                elif board_coordinates == (0,1):
+                    board[0][1] = player
+                    print(board)
+                elif board_coordinates == (0,2):
+                    board[0][2] = player
+                    print(board)
+                elif board_coordinates == (1,0):
+                    board[1][0] = player
+                    print(board)
+                elif board_coordinates == (1,1):
+                    board[1][1] = player
+                    print(board)
+                elif board_coordinates == (1,2):
+                    board[1][2] = player
+                    print(board)
+                elif board_coordinates == (2,0):
+                    board[2][0] = player
+                    print(board)
+                elif board_coordinates == (2,1):
+                    board[2][1] = player
+                    print(board)
+                elif board_coordinates == (2,2):
+                    board[2][2] = player
+                    print(board)
+                else:
+                    print("This is not a valid choice.")
         except:
             print("This is not a valid choice. ")
 
