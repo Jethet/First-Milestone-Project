@@ -69,9 +69,9 @@ def open_square():
         print("This is not a valid choice. ")
         player_choice = input("Where do you place your mark? ")
 
-    if player_choice in available_square:
-        available_square.remove(player_choice)
-        return available_square
+    # I HAVE CHANGED This
+    available_square.remove(player_choice)
+    return available_square
 
 def transform_choice(player_choice):
     board_squares = {1:(0,0), 2:(0,1), 3:(0,2), 4:(1.0), 5:(1,1), 6:(1,2),\
