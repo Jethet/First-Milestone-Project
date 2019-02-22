@@ -8,9 +8,8 @@ def open_square():
         print("This is not a valid choice. ")
         player_choice = input("Where do you place your mark? ")
 
-    if player_choice in available_square:
-        available_square.remove(player_choice)
-        return available_square
+    available_square.remove(player_choice)
+    return available_square
 
 
 print(open_square())
