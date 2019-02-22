@@ -21,6 +21,7 @@ def winner():
           == board[2][1] or board[0][2] and board[1][2] == board[2][2] \
           and player == 'O':
         print("Player O is the winner!")
-        break
+    else:
+        print("It is a tie!")
 
 winner()

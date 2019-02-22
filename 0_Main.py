@@ -1,14 +1,31 @@
 """
+DESCRIPTION
 This is the main() function of the code for the game TicTacToe.
 Two players can play the game, sitting at the same computer.
 The board should be printed every time a player has made a move.
 The programme should accept input from the player, determine the
-position and then place a symbol on that board position. Subsequently,
-that position should not be available anymore.
-The player who is the first to have three (X or O) in a row, is the winner.
+position and then place a symbol for the player (eigher X or O)
+on that board position. Subsequently, that position should not be
+available anymore. The player who is the first to have three (X or O)
+in a row is the winner.
 """
 
+import pickle
+# Pickle is used to save all the  changes to the board during the game.
 # Player is asked to choose X or O; player X starts.
+
+def start_game():
+    while True:
+        start = input("Would you like to play tic tac toe? Choose 1 for yes\
+ and 2 for no. ")
+        if start == '2':
+            print("Game over.")
+            break
+        elif start != '1' and start !='2':
+            print("This is not a valid choice. Please enter 1 or 2.")
+        else:
+            print("Player X starts the game.")
+
 def get_player():
     player = input("Are you player X or player O? ")
     while player != 'X' and player != 'O':
@@ -33,7 +50,6 @@ def open_square():
         print("This is not a valid choice. ")
         player_choice = input("Where do you place your mark? ")
 
-    # I HAVE CHANGED This
     available_square.remove(player_choice)
     return available_square
 
@@ -44,7 +60,7 @@ def transform_choice(player_choice):
     return board_coordinates
 
 def update_board(player, board_coordinates, board):
-    # adapt board by adding player choice on relevant square
+    # update board by adding player choice on relevant square
     if board_coordinates == (0,0):
         board[0][0] = player
         print(board)
@@ -74,7 +90,7 @@ def update_board(player, board_coordinates, board):
         print(board)
     else:
         print("This is not a valid choice.")
-    return updated_board
+    return updated_board   # IS THIS GOING TO BE A PROBLEM WITH VARIABLE board ?
 
 # Player can choose a square.
 # If player chooses a square, the choice is shown on the board.
@@ -105,13 +121,9 @@ def check_winner(board):
        == board[2][1] or board[0][2] and board[1][2] == board[2][2]:
        return True
     else:
-       return False
+        print("It is a tie!")
+        return False
 
-
-import pickle
-# Pickle is used to save all the  changes to the board during the game.
-with open('board', mode = 'wb') as my_file:  #this saves the board
-    pickle.dump(board, my_file)
 
 def main():
     # This is an explanation of the game.
@@ -120,8 +132,19 @@ def main():
     " Each time you play you can mark one square.\n"
     "The player who gets three marks in a row (diagonal, horizontal or vertical)\n"
     "wins the game.\n")
-    # First step is ask players if they want to play.
+    # First step is ask players if they want to play:
+    start = start_game()
+    # Second step: player chooses X or O:
     player = get_player()
+    # Third step: board is printed:
     board = new_board()
+    # Fourth step: player chooses square, square is checked and if available
+    # square is marked with X or O and updated board is printed:
     board = choice(player,board)
+    # Fifth step is check if there is a winner. For this there must be three
+    # squares with the same mark in one row (horizontal, vertical or diagonal)
     winner = check_winner(board)
+
+
+with open('board', mode = 'wb') as my_file:  #this saves the board
+    pickle.dump(board, my_file)
