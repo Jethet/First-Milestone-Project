@@ -12,13 +12,14 @@ the rest of the programme. ERROR: name 'board' is not defined.
 I do not understand this because the board is defined in the function new_board()
 and returned. For now, I have grayed it out.
 
-To access the file I have  put
+To access the file I have put
 """
 with open('board', mode = 'rb') as handle:
     board = pickle.load(handle)
 """
 after the function  choice(). For now, I have grayed this out as well.
-
+I have also again use 'picke.dump' at the end of main() to save the new_board
+after running the programme but that seems too much? It is now grayed out.
 
 Other question in general re. pickle: I know that the 'b' in 'wb' and 'rb'
 stands for 'binary'. I also see code that just uses 'r' and 'w'.
