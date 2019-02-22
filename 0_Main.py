@@ -15,23 +15,25 @@ in a row is the winner.
 import pickle
 
 def start_game():
-    while True:
-        start = input("Would you like to play tic tac toe? Choose 1 for yes\
+    start = input("Would you like to play Tic Tac Toe? Choose 1 for yes\
  and 2 for no. ")
+    while start != '2':
         if start == '2':
             print("Game over.")
-            return False
+            break
         elif start != '1' and start !='2':
             print("This is not a valid choice. Please enter 1 or 2.")
-        else:
-            print("Player X starts the game.")
+    else:
+        return start
 
 def get_player():
+    print("In Tic Tac Toe, player X starts the game.")
     player = input("Are you player X or player O? ")
     while player != 'X' and player != 'O':
         print("This is not a valid choice. ")
         player = input("Are you player X or player O? ")
-    return player
+    else:
+        return player
 
 # If the player wants to play, a new board is created.
 def new_board():
@@ -42,7 +44,7 @@ def new_board():
     board.append_row(['7', '8', '9'])
     print(board, '\n')
     return board
-    
+
 def open_square():
     player_choice = input("Where do you place your mark? ")
     available_square = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
@@ -90,7 +92,7 @@ def update_board(player, board_coordinates, board):
         print(board)
     else:
         print("This is not a valid choice.")
-    return updated_board   # IS THIS GOING TO BE A PROBLEM WITH VARIABLE board ?
+    return board
 
 # Player can choose a square.
 # If player chooses a square, the choice is shown on the board.
@@ -107,9 +109,9 @@ def choice(player, board):
     # choice is translated into board_coordinates
     board_coordinates = transform_choice(choice)
     # show choice on the board
-    updated_board = update_board(player, board_coordinates, board)
-    print(updated_board)
-    return updated_board
+    board = update_board(player, board_coordinates, board)
+    print(board)
+    return board
 
 # The player who gets three marks in a row is declared the winner.
 def check_winner(board):
@@ -126,8 +128,6 @@ def check_winner(board):
 
 
 def main():
-    with open('board', mode = 'r') as my_file:
-
     # This is an explanation of the game.
     print("The board has 3 x 3 = 9 squares. You can be player X or O."
     "Player X starts the game."
@@ -140,17 +140,19 @@ def main():
     player = get_player()
     # Third step: board is printed:
     board = new_board()
-    with open('board', mode = 'wb') as handle:  #this saves the board
-        pickle.dump(board, my_file)
+    #with open('board', mode = 'wb') as handle:  #this saves the board
+    #    pickle.dump(board, handle)
     # Fourth step: player chooses square, square is checked and if available
     # square is marked with X or O and updated board is printed:
     board = choice(player,board)
-    with open('board', mode = 'rb') as handle:
-        board = pickle.load(handle)
+    #with open('board', mode = 'rb') as handle:
+    #    board = pickle.load(handle)
     # Fifth step is check if there is a winner. For this there must be three
     # squares with the same mark in one row (horizontal, vertical or diagonal)
     winner = check_winner(board)
+    start = start_game()
 
+#with open('board', mode = 'wb') as my_file:  #this saves the board
+#    pickle.dump(board, my_file)
 
-with open('board', mode = 'wb') as my_file:  #this saves the board
-    pickle.dump(board, my_file)
+main()
