@@ -15,16 +15,14 @@ in a row is the winner.
 import pickle
 
 def start_game():
-    start = input("Would you like to play Tic Tac Toe? Choose 1 for yes\
+    start = input("Would you like to play tic tac toe? Choose 1 for yes\
  and 2 for no. ")
-    while True:
-        start != '2'
-        if start != '1':
-            print("This is not a valid choice. Please enter 1 or 2.")
-        else:
-            print("Game over.")
-            return False
-        break
+    while start != '1' and start != '2':
+        print("This is not valid. Please enter 1 or 2.")
+        if start == '1':
+            print("Let's play!")
+    else:
+        exit()
 
 def get_player():
     print("In Tic Tac Toe, player X starts the game.")
@@ -123,16 +121,18 @@ def check_winner(board):
        == board[2][1] or board[0][2] and board[1][2] == board[2][2]:
        return True
     else:
-        print("It is a tie!")
-        return False
+        print("It is a tie!")  # IF THE CHECK FOR A WINNER IS DONE EACH TIME
+        return False            # THE PLAYER CHOOSES A SQUARE, THERE WILL BE
+                                # MANY TIMES THAT 3-IN-A-ROW IS NOT True
+                                # The message 'It is a tie!' should not be
+                                # printed EVERY time
 
 
 def main():
     # This is an explanation of the game.
     print("The board has 3 x 3 = 9 squares. You can be player X or O.\n"
-    " Player X starts the game.\n"
-    " Each time you play you can mark one square.\n"
-    " The player who gets three marks in a row (diagonal, horizontal or vertical)\n"
+    "Player X starts the game. Each time you play you can mark one square.\n"
+    "The player who gets three marks in a row (diagonal, horizontal or vertical)\n"
     "wins the game.\n")
     # First step is ask players if they want to play:
     start = start_game()
