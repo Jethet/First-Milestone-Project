@@ -10,9 +10,9 @@ available anymore. The player who is the first to have three (X or O)
 in a row is the winner.
 """
 
-import pickle
 # Pickle is used to save all the  changes to the board during the game.
 # Player is asked to choose X or O; player X starts.
+import pickle
 
 def start_game():
     while True:
@@ -20,7 +20,7 @@ def start_game():
  and 2 for no. ")
         if start == '2':
             print("Game over.")
-            break
+            return False
         elif start != '1' and start !='2':
             print("This is not a valid choice. Please enter 1 or 2.")
         else:
@@ -42,7 +42,7 @@ def new_board():
     board.append_row(['7', '8', '9'])
     print(board, '\n')
     return board
-
+    
 def open_square():
     player_choice = input("Where do you place your mark? ")
     available_square = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
@@ -126,6 +126,8 @@ def check_winner(board):
 
 
 def main():
+    with open('board', mode = 'r') as my_file:
+
     # This is an explanation of the game.
     print("The board has 3 x 3 = 9 squares. You can be player X or O."
     "Player X starts the game."
@@ -138,9 +140,13 @@ def main():
     player = get_player()
     # Third step: board is printed:
     board = new_board()
+    with open('board', mode = 'wb') as handle:  #this saves the board
+        pickle.dump(board, my_file)
     # Fourth step: player chooses square, square is checked and if available
     # square is marked with X or O and updated board is printed:
     board = choice(player,board)
+    with open('board', mode = 'rb') as handle:
+        board = pickle.load(handle)
     # Fifth step is check if there is a winner. For this there must be three
     # squares with the same mark in one row (horizontal, vertical or diagonal)
     winner = check_winner(board)
