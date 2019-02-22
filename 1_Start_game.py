@@ -4,7 +4,7 @@ def start_game():
  and 2 for no. ")
         if start == '2':
             print("Game over.")
-            break
+            return False
         elif start != '1' and start !='2':
             print("This is not valid. Please enter 1 or 2.")
         else:
