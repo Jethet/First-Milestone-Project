@@ -17,14 +17,14 @@ import pickle
 def start_game():
     start = input("Would you like to play Tic Tac Toe? Choose 1 for yes\
  and 2 for no. ")
-    while start != '2':
-        if start == '2':
-            print("Game over.")
-            break
-        elif start != '1' and start !='2':
+    while True:
+        start != '2'
+        if start != '1':
             print("This is not a valid choice. Please enter 1 or 2.")
-    else:
-        return start
+        else:
+            print("Game over.")
+            return False
+        break
 
 def get_player():
     print("In Tic Tac Toe, player X starts the game.")
@@ -129,10 +129,10 @@ def check_winner(board):
 
 def main():
     # This is an explanation of the game.
-    print("The board has 3 x 3 = 9 squares. You can be player X or O."
-    "Player X starts the game."
+    print("The board has 3 x 3 = 9 squares. You can be player X or O.\n"
+    " Player X starts the game.\n"
     " Each time you play you can mark one square.\n"
-    "The player who gets three marks in a row (diagonal, horizontal or vertical)\n"
+    " The player who gets three marks in a row (diagonal, horizontal or vertical)\n"
     "wins the game.\n")
     # First step is ask players if they want to play:
     start = start_game()
