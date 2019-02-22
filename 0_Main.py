@@ -17,16 +17,15 @@ in a row is the winner.
 def start_game():
     start = input("Would you like to play tic tac toe? Choose 1 for yes\
  and 2 for no. ")
-    try:
-        while start != '1' and start != '2':
-            print("This is not valid. Please enter 1 or 2.")
-            start = input("Choose 1 for yes and 2 for no. ")
-        else:
-            if start == '2':
-                print("Game over!")
-    except:
-         start == '1'
-         print("Let's play!")
+    while start != '1' and start != '2':
+        print("This is not valid. Please enter 1 or 2.")
+        start = input("Choose 1 for yes and 2 for no. ")
+    else:
+        if start == '1':
+            print("Let's play!")
+        elif start == '2':
+            print("Game over!")
+            exit()
 
 
 def get_player():
