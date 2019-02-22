@@ -12,17 +12,22 @@ in a row is the winner.
 
 # Pickle is used to save all the  changes to the board during the game.
 # Player is asked to choose X or O; player X starts.
-import pickle
+#import pickle
 
 def start_game():
     start = input("Would you like to play tic tac toe? Choose 1 for yes\
  and 2 for no. ")
-    while start != '1' and start != '2':
-        print("This is not valid. Please enter 1 or 2.")
-        if start == '1':
-            print("Let's play!")
-    else:
-        exit()
+    try:
+        while start != '1' and start != '2':
+            print("This is not valid. Please enter 1 or 2.")
+            start = input("Choose 1 for yes and 2 for no. ")
+        else:
+            if start == '2':
+                print("Game over!")
+    except:
+         start == '1'
+         print("Let's play!")
+
 
 def get_player():
     print("In Tic Tac Toe, player X starts the game.")
@@ -47,11 +52,13 @@ def open_square():
     player_choice = input("Where do you place your mark? ")
     available_square = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
     while player_choice not in available_square:
-        print("This is not a valid choice. ")
-        player_choice = input("Where do you place your mark? ")
-
-    available_square.remove(player_choice)
-    return available_square
+        print("This is not a valid choice.")
+        #player_choice = input("Where do you place your mark? ")
+    if player_choice in available_square:
+        available_square.remove(player_choice)
+        #print(available_square) --> correct list is returned without player_choice
+        return player_choice
+        #print(player_choice)  ---> correct player_choice is returned
 
 def transform_choice(player_choice):
     board_squares = {1:(0,0), 2:(0,1), 3:(0,2), 4:(1.0), 5:(1,1), 6:(1,2),\
