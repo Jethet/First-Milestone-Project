@@ -107,17 +107,17 @@ def update_board(player, board_coordinates, board):
 # Player can choose a square.
 # If player chooses a square, the choice is shown on the board.
 # The chosen square should be blocked.
-def choice(player, board):
+def get_choice(player, board):
     # ask the player for her/his choice
     player_choice = input("Where do you place your mark? ")
 
     # make a list of squares that can be chosen
     # check if choice is in the list of squares
     # if choice not in list of squares, player must choose again
-    list_available_squares = open_square()
+    available_squares = open_square()
 
     # choice is translated into board_coordinates
-    board_coordinates = transform_choice(choice)
+    board_coordinates = transform_choice(player_choice)
     # show choice on the board
     board = update_board(player, board_coordinates, board)
     print(board)
@@ -169,7 +169,7 @@ def main():
         #    pickle.dump(board, handle)
         # Fourth step: player chooses square, square is checked and if available
         # square is marked with X or O and updated board is printed:
-        board = choice(player,board)
+        choice = get_choice(player,board)
         #with open('board', mode = 'rb') as handle:
         #    board = pickle.load(handle)
         # Fifth step is check if there is a winner. For this there must be three
