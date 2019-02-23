@@ -10,9 +10,7 @@ def check_winner(board):
        board[1][0] == board[2][0] or board[0][1] and board[1][1] \
        == board[2][1] or board[0][2] and board[1][2] == board[2][2]:
        return True
+       print("We have a winner!")
     else:
-        print("It is a tie!")  # IF THE CHECK FOR A WINNER IS DONE EACH TIME
-        return False            # THE PLAYER CHOOSES A SQUARE, THERE WILL BE
-                                # MANY TIMES THAT 3-IN-A-ROW IS NOT True
-                                # The message 'It is a tie!' should not be
-                                # printed EVERY time
+        print("No winner this time.")
+        return False

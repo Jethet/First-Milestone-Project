@@ -63,6 +63,7 @@ def open_square():
         print("This is not a valid choice. ")
     available_square.remove(player_choice)
     return available_square
+    return player_choice
 
 # The choice is transformed into board board_coordinates:
 def transform_choice(player_choice):
@@ -131,13 +132,12 @@ def check_winner(board):
        board[2][0] and board[2][1] == board[2][2] or board[0][0] and \
        board[1][0] == board[2][0] or board[0][1] and board[1][1] \
        == board[2][1] or board[0][2] and board[1][2] == board[2][2]:
-       return True
+        return True
+        print("We have a winner!")
     else:
-        print("It is a tie!")  # IF THE CHECK FOR A WINNER IS DONE EACH TIME
-        return False            # THE PLAYER CHOOSES A SQUARE, THERE WILL BE
-                                # MANY TIMES THAT 3-IN-A-ROW IS NOT True
-                                # The message 'It is a tie!' should not be
-                                # printed EVERY time
+        print("No winner this time!")
+        return False
+
 # When the game ends, the player is asked if s/he wants to play again:
 def repeat_game():
     answer = input("Would you like to play again? Choose 1 for yes and 2 for no. ")
@@ -148,7 +148,7 @@ def repeat_game():
         if answer == '1':
             print("Let's play!")
         elif answer == '2':
-            print("Thanks for player, until next time!")
+            print("Thanks for playing, until next time!")
             playing = False
             exit()
 
