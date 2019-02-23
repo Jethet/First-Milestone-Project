@@ -16,6 +16,7 @@ in a row is the winner.
 
 playing = True
 
+# The player is asked if s/he wants to play:
 def start_game():
     start = input("Would you like to play tic tac toe? Choose 1 for yes\
  and 2 for no. ")
@@ -30,7 +31,7 @@ def start_game():
             playing = False
             exit()
 
-
+# The player is asked what mark (X or O) s/he wants to use:
 def get_player():
     print("In Tic Tac Toe, player X starts the game.")
     player = input("Are you player X or player O? ")
@@ -50,26 +51,26 @@ def new_board():
     print(board, '\n')
     return board
 
+# The player is asked to choose a square to put her/his mark:
 def open_square():
     player_choice = input("Where do you place your mark? ")
     available_square = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
     while player_choice not in available_square:
-        print("This is not a valid choice.")
-        #player_choice = input("Where do you place your mark? ")
-    if player_choice in available_square:
-        available_square.remove(player_choice)
-        #print(available_square) --> correct list is returned without player_choice
-        return player_choice
-        #print(player_choice)  ---> correct player_choice is returned
+        print("This is not a valid choice. ")
+        player_choice = input("Where do you place your mark? ")
 
+    available_square.remove(player_choice)
+    return available_square
+
+# The choice is transformed into board board_coordinates:
 def transform_choice(player_choice):
     board_squares = {1:(0,0), 2:(0,1), 3:(0,2), 4:(1.0), 5:(1,1), 6:(1,2),\
                           7:(2,0), 8:(2,1), 9:(2,2)}
     board_coordinates = board_squares.get(player_choice)
     return board_coordinates
 
+# The board is updated by adding player choice on relevant square
 def update_board(player, board_coordinates, board):
-    # update board by adding player choice on relevant square
     if board_coordinates == (0,0):
         board[0][0] = player
         print(board)
