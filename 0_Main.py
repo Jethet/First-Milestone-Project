@@ -1,6 +1,6 @@
 """
 DESCRIPTION
-This is the main() function of the code for the game TicTacToe.
+This is the main() function of the code for the game Tic Tac Toe.
 Two players can play the game, sitting at the same computer.
 The board should be printed every time a player has made a move.
 The programme should accept input from the player, determine the
@@ -18,7 +18,7 @@ playing = True
 
 # The player is asked if s/he wants to play:
 def start_game():
-    start = input("Would you like to play tic tac toe? Choose 1 for yes\
+    start = input("Would you like to play Tic Tac Toe? Choose 1 for yes\
  and 2 for no. ")
     while start != '1' and start != '2':
         print("This is not valid. Please enter 1 or 2.")
@@ -63,8 +63,6 @@ def open_square():
         print("This is not a valid choice. ")
     available_square.remove(player_choice)
     return available_square
-
-
 
 # The choice is transformed into board board_coordinates:
 def transform_choice(player_choice):
@@ -157,7 +155,7 @@ def repeat_game():
 def main():
     while playing == True:
     # This is an explanation of the game.
-        print("The board has 3 x 3 = 9 squares. You can be player X or O.\n"
+        print("In Tic Tac Toe, the board has 3 x 3 = 9 squares. You can be player X or O.\n"
         "Player X starts the game. Each time you play you can mark one square.\n"
         "The player who gets three marks in a row (diagonal, horizontal or vertical)\n"
         "wins the game.\n")
