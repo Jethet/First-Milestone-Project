@@ -14,6 +14,8 @@ in a row is the winner.
 # Player is asked to choose X or O; player X starts.
 #import pickle
 
+playing = True
+
 def start_game():
     start = input("Would you like to play tic tac toe? Choose 1 for yes\
  and 2 for no. ")
@@ -25,6 +27,7 @@ def start_game():
             print("Let's play!")
         elif start == '2':
             print("Game over!")
+            playing = False
             exit()
 
 
@@ -135,28 +138,29 @@ def check_winner(board):
 
 
 def main():
+    while playing == True:
     # This is an explanation of the game.
-    print("The board has 3 x 3 = 9 squares. You can be player X or O.\n"
-    "Player X starts the game. Each time you play you can mark one square.\n"
-    "The player who gets three marks in a row (diagonal, horizontal or vertical)\n"
-    "wins the game.\n")
-    # First step is ask players if they want to play:
-    start = start_game()
-    # Second step: player chooses X or O:
-    player = get_player()
-    # Third step: board is printed:
-    board = new_board()
-    #with open('board', mode = 'wb') as handle:  #this saves the board
-    #    pickle.dump(board, handle)
-    # Fourth step: player chooses square, square is checked and if available
-    # square is marked with X or O and updated board is printed:
-    board = choice(player,board)
-    #with open('board', mode = 'rb') as handle:
-    #    board = pickle.load(handle)
-    # Fifth step is check if there is a winner. For this there must be three
-    # squares with the same mark in one row (horizontal, vertical or diagonal)
-    winner = check_winner(board)
-    start = start_game()
+        print("The board has 3 x 3 = 9 squares. You can be player X or O.\n"
+        "Player X starts the game. Each time you play you can mark one square.\n"
+        "The player who gets three marks in a row (diagonal, horizontal or vertical)\n"
+        "wins the game.\n")
+        # First step is ask players if they want to play:
+        start = start_game()
+        # Second step: player chooses X or O:
+        player = get_player()
+        # Third step: board is printed:
+        board = new_board()
+        #with open('board', mode = 'wb') as handle:  #this saves the board
+        #    pickle.dump(board, handle)
+        # Fourth step: player chooses square, square is checked and if available
+        # square is marked with X or O and updated board is printed:
+        board = choice(player,board)
+        #with open('board', mode = 'rb') as handle:
+        #    board = pickle.load(handle)
+        # Fifth step is check if there is a winner. For this there must be three
+        # squares with the same mark in one row (horizontal, vertical or diagonal)
+        winner = check_winner(board)
+        start = start_game()
 
 #with open('board', mode = 'wb') as my_file:  #this saves the board
 #    pickle.dump(board, my_file)
