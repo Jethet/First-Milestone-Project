@@ -58,12 +58,14 @@ def open_square():
     try:
         if not player_choice in available_square:
             print("This is not a valid choice. ")
+        else:
+            available_square.remove(player_choice)
+            return available_square
+            return player_choice
         #player_choice = input("Where do you place your mark? ")
-    except:
+    except Exception as e:
         print("This is not a valid choice. ")
-    available_square.remove(player_choice)
-    return available_square
-    return player_choice
+
 
 # The choice is transformed into board board_coordinates:
 def transform_choice(player_choice):
