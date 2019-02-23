@@ -55,9 +55,12 @@ def new_board():
 def open_square():
     available_square = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
     player_choice = input("Where do you place your mark? ")
-    if not player_choice in available_square:
-        print("This is not a valid choice. ")
+    try:
+        if not player_choice in available_square:
+            print("This is not a valid choice. ")
         #player_choice = input("Where do you place your mark? ")
+    except:
+        print("This is not a valid choice. ")
     available_square.remove(player_choice)
     return available_square
 
@@ -139,9 +142,8 @@ def check_winner(board):
                                 # printed EVERY time
 # When the game ends, the player is asked if s/he wants to play again:
 def repeat_game():
-    answer = input("Would you like to play again? Choose 1 for yes\
-    and 2 for no. ")
-    while answer != '1' and start != '2':
+    answer = input("Would you like to play again? Choose 1 for yes and 2 for no. ")
+    while answer != '1' and answer != '2':
         print("This is not valid. Please enter 1 or 2.")
         answer = input("Choose 1 for yes and 2 for no. ")
     else:
