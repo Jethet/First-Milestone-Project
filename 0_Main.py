@@ -53,14 +53,15 @@ def new_board():
 
 # The player is asked to choose a square to put her/his mark:
 def open_square():
-    player_choice = input("Where do you place your mark? ")
     available_square = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
-    while player_choice not in available_square:
+    player_choice = input("Where do you place your mark? ")
+    if not player_choice in available_square:
         print("This is not a valid choice. ")
-        player_choice = input("Where do you place your mark? ")
-
+        #player_choice = input("Where do you place your mark? ")
     available_square.remove(player_choice)
     return available_square
+
+
 
 # The choice is transformed into board board_coordinates:
 def transform_choice(player_choice):
@@ -136,7 +137,20 @@ def check_winner(board):
                                 # MANY TIMES THAT 3-IN-A-ROW IS NOT True
                                 # The message 'It is a tie!' should not be
                                 # printed EVERY time
-
+# When the game ends, the player is asked if s/he wants to play again:
+def repeat_game():
+    answer = input("Would you like to play again? Choose 1 for yes\
+    and 2 for no. ")
+    while answer != '1' and start != '2':
+        print("This is not valid. Please enter 1 or 2.")
+        answer = input("Choose 1 for yes and 2 for no. ")
+    else:
+        if answer == '1':
+            print("Let's play!")
+        elif answer == '2':
+            print("Thanks for player, until next time!")
+            playing = False
+            exit()
 
 def main():
     while playing == True:
@@ -161,7 +175,7 @@ def main():
         # Fifth step is check if there is a winner. For this there must be three
         # squares with the same mark in one row (horizontal, vertical or diagonal)
         winner = check_winner(board)
-        start = start_game()
+        repeat = repeat_game()
 
 #with open('board', mode = 'wb') as my_file:  #this saves the board
 #    pickle.dump(board, my_file)
