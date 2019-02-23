@@ -56,22 +56,23 @@ def open_square():
     available_square = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
     player_choice = input("Where do you place your mark? ")
     try:
-        if not player_choice in available_square:
+        while player_choice not in available_square:
             print("This is not a valid choice. ")
+            player_choice = input("Where do you place your mark? ")
         else:
             available_square.remove(player_choice)
-            return available_square
-            return player_choice
-        #player_choice = input("Where do you place your mark? ")
-    except Exception as e:
-        print("This is not a valid choice. ")
-
+            print(player_choice)
+            print(available_square)
+            return int(player_choice)
+    except ValueError:
+        pass
 
 # The choice is transformed into board board_coordinates:
 def transform_choice(player_choice):
     board_squares = {1:(0,0), 2:(0,1), 3:(0,2), 4:(1.0), 5:(1,1), 6:(1,2),\
                           7:(2,0), 8:(2,1), 9:(2,2)}
     board_coordinates = board_squares.get(player_choice)
+    print(board_coordinates)
     return board_coordinates
 
 # The board is updated by adding player choice on relevant square
@@ -107,22 +108,16 @@ def update_board(player, board_coordinates, board):
         print("This is not a valid choice.")
     return board
 
-# Player can choose a square.
-# If player chooses a square, the choice is shown on the board.
-# The chosen square should be blocked.
-def get_choice(player, board):
-    # ask the player for her/his choice
-    player_choice = input("Where do you place your mark? ")
-
-    # make a list of squares that can be chosen
-    # check if choice is in the list of squares
-    # if choice not in list of squares, player must choose again
-    available_squares = open_square()
-
-    # choice is translated into board_coordinates
+# give a list of squares that can be chosen
+# ask the player for her/his choice
+# check if choice is in the list of squares
+# if choice not in list of squares, player must choose again
+# choice is translated into board_coordinates
+# choice is shown on the board
+def get_choice(player_choice, board):
+    player_choice = open_square()
     board_coordinates = transform_choice(player_choice)
-    # show choice on the board
-    board = update_board(player, board_coordinates, board)
+    board = update_board(player_choice, board_coordinates, board)
     print(board)
     return board
 
