@@ -10,6 +10,9 @@ def open_square():
 
     available_square.remove(player_choice)
     return available_square
+    #print(available_square)
+    return player_choice
+    #print(player_choice)
 
 
-print(open_square())
+open_square()
