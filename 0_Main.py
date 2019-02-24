@@ -14,6 +14,10 @@ in a row is the winner.
 # Player is asked to choose X or O; player X starts.
 #import pickle
 
+available_square = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
+board_squares = {1:(0,0), 2:(0,1), 3:(0,2), 4:(1.0), 5:(1,1), 6:(1,2),\
+                      7:(2,0), 8:(2,1), 9:(2,2)}
+
 playing = True
 
 # The player is asked if s/he wants to play:
@@ -53,7 +57,7 @@ def new_board():
 
 # The player is asked to choose a square to put her/his mark:
 def open_square():
-    available_square = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
+    #available_square = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
     player_choice = input("Where do you place your mark? ")
     try:
         while player_choice not in available_square:
@@ -69,8 +73,8 @@ def open_square():
 
 # The choice is transformed into board board_coordinates:
 def transform_choice(player_choice):
-    board_squares = {1:(0,0), 2:(0,1), 3:(0,2), 4:(1.0), 5:(1,1), 6:(1,2),\
-                          7:(2,0), 8:(2,1), 9:(2,2)}
+    #board_squares = {1:(0,0), 2:(0,1), 3:(0,2), 4:(1.0), 5:(1,1), 6:(1,2),\
+                          #7:(2,0), 8:(2,1), 9:(2,2)}
     board_coordinates = board_squares.get(player_choice)
     print(board_coordinates)
     return board_coordinates
