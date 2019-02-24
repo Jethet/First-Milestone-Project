@@ -44,27 +44,16 @@ def start_game():
 
 # The player is asked what mark (X or O) s/he wants to use:
 def get_player():
-    print("In Tic Tac Toe, player X starts the game.")
     player = input("Are you player X or player O? ")
     while player != 'X' and player != 'O':
         print("This is not a valid choice. ")
         player = input("Are you player X or player O? ")
     else:
         return player
-"""
-# If the player wants to play, a new board is created.
-def new_board():
-    from beautifultable import BeautifulTable
-    board = BeautifulTable()
-    board.append_row(['1', '2', '3'])
-    board.append_row(['4', '5', '6'])
-    board.append_row(['7', '8', '9'])
-    print(board, '\n')
-    return board
-"""
+
 # The player is asked to choose a square to put her/his mark:
 def open_square():
-    #available_square = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
+    player = get_player()
     player_choice = input("Where do you place your mark? ")
     try:
         while player_choice not in available_square:
@@ -80,8 +69,6 @@ def open_square():
 
 # The choice is transformed into board board_coordinates:
 def transform_choice(player_choice):
-    #board_squares = {1:(0,0), 2:(0,1), 3:(0,2), 4:(1.0), 5:(1,1), 6:(1,2),\
-                          #7:(2,0), 8:(2,1), 9:(2,2)}
     board_coordinates = board_squares.get(player_choice)
     print(board_coordinates)
     return board_coordinates
@@ -134,7 +121,7 @@ def get_choice(player, board):
 
 # The player who gets three marks in a row is declared the winner.
 def check_winner(board):
-    if board[0][0] and board[1][1] == board[2][2] or board[0][2] and \
+    if board[0][0] and board[1][1] and board[2][2] == 'X' or board[0][2] and \
        board[1][1] == board[2][0] or board[0][0] and board[0][1] == \
        board[0][2] or board[1][0] and board[1][1] == board[1][2] or \
        board[2][0] and board[2][1] == board[2][2] or board[0][0] and \
@@ -161,16 +148,16 @@ def repeat_game():
             exit()
 
 def main():
-    while playing == True:
     # This is an explanation of the game.
-        print("In Tic Tac Toe, the board has 3 x 3 = 9 squares. You can be player X or O.\n"
-        "Player X starts the game. Each time you play you can mark one square.\n"
-        "The player who gets three marks in a row (diagonal, horizontal or vertical)\n"
-        "wins the game.\n")
+    print("In Tic Tac Toe, the board has 3 x 3 = 9 squares. You can be player X or O.\n"
+    "Player X starts the game. Each time you play you can mark one square.\n"
+    "The player who gets three marks in a row (diagonal, horizontal or vertical)\n"
+    "wins the game.\n")
+    while playing == True:
         # First step is ask players if they want to play:
         start = start_game()
         # Second step: player chooses X or O:
-        player = get_player()
+        #player = get_player()
         # Third step: board is printed:
         #board = updated_board(player)
         #with open('board', mode = 'wb') as handle:  #this saves the board
@@ -183,7 +170,10 @@ def main():
         # Fifth step is check if there is a winner. For this there must be three
         # squares with the same mark in one row (horizontal, vertical or diagonal)
         winner = check_winner(board)
-        repeat = repeat_game()
+        if winner == False:
+            continue
+        else:
+            repeat = repeat_game()
 
 #with open('board', mode = 'wb') as my_file:  #this saves the board
 #    pickle.dump(board, my_file)
