@@ -19,7 +19,7 @@ board.append_row(['1', '2', '3'])
 board.append_row(['4', '5', '6'])
 board.append_row(['7', '8', '9'])
 print(board, '\n')
-return board
+#return board
 
 available_square = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
 board_squares = {1:(0,0), 2:(0,1), 3:(0,2), 4:(1,0), 5:(1,1), 6:(1,2),\
@@ -87,7 +87,7 @@ def transform_choice(player_choice):
     return board_coordinates
 
 # The board is updated by adding player choice on relevant square
-def update_board(player, board_coordinates, board):
+def updated_board(player, board_coordinates, board):
     if board_coordinates == (0,0):
         board[0][0] = player
         print(board)
@@ -128,8 +128,8 @@ def update_board(player, board_coordinates, board):
 def get_choice(player, board):
     player_choice = open_square()
     board_coordinates = transform_choice(player_choice)
-    board = update_board(player, board_coordinates, board)
-    print(board)
+    board = updated_board(player, board_coordinates, board)
+    #print(board)
     return board
 
 # The player who gets three marks in a row is declared the winner.
@@ -140,8 +140,8 @@ def check_winner(board):
        board[2][0] and board[2][1] == board[2][2] or board[0][0] and \
        board[1][0] == board[2][0] or board[0][1] and board[1][1] \
        == board[2][1] or board[0][2] and board[1][2] == board[2][2]:
-        return True
         print("We have a winner!")
+        return True
     else:
         print("No winner this time!")
         return False
@@ -172,7 +172,7 @@ def main():
         # Second step: player chooses X or O:
         player = get_player()
         # Third step: board is printed:
-        board = new_board()
+        #board = updated_board(player)
         #with open('board', mode = 'wb') as handle:  #this saves the board
         #    pickle.dump(board, handle)
         # Fourth step: player chooses square, square is checked and if available
