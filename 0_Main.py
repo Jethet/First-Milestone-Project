@@ -53,7 +53,6 @@ def get_player():
 
 # The player is asked to choose a square to put her/his mark:
 def open_square():
-    player = get_player()
     player_choice = input("Where do you place your mark? ")
     try:
         while player_choice not in available_square:
@@ -142,6 +141,11 @@ def repeat_game():
     else:
         if answer == '1':
             print("Let's play!")
+            board = BeautifulTable()
+            board.append_row(['1', '2', '3'])
+            board.append_row(['4', '5', '6'])
+            board.append_row(['7', '8', '9'])
+            print(board, '\n')
         elif answer == '2':
             print("Thanks for playing, until next time!")
             playing = False
@@ -153,11 +157,12 @@ def main():
     "Player X starts the game. Each time you play you can mark one square.\n"
     "The player who gets three marks in a row (diagonal, horizontal or vertical)\n"
     "wins the game.\n")
-    while playing == True:
+
         # First step is ask players if they want to play:
-        start = start_game()
+    start = start_game()
         # Second step: player chooses X or O:
-        #player = get_player()
+    while playing == True:
+        player = get_player()
         # Third step: board is printed:
         #board = updated_board(player)
         #with open('board', mode = 'wb') as handle:  #this saves the board
