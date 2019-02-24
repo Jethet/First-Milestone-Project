@@ -13,13 +13,14 @@ in a row is the winner.
 # Pickle is used to save all the  changes to the board during the game.
 # Player is asked to choose X or O; player X starts.
 #import pickle
+"""
 from beautifultable import BeautifulTable
 board = BeautifulTable()
 board.append_row(['1', '2', '3'])
 board.append_row(['4', '5', '6'])
 board.append_row(['7', '8', '9'])
 print(board, '\n')
-#return board
+"""
 
 available_square = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
 board_squares = {1:(0,0), 2:(0,1), 3:(0,2), 4:(1,0), 5:(1,1), 6:(1,2),\
@@ -41,6 +42,14 @@ def start_game():
             print("Game over!")
             playing = False
             exit()
+
+def new_board():
+    board = BeautifulTable()
+    board.append_row(['1', '2', '3'])
+    board.append_row(['4', '5', '6'])
+    board.append_row(['7', '8', '9'])
+    print(board, '\n')
+    return board
 
 # The player is asked what mark (X or O) s/he wants to use:
 def get_player():
@@ -141,11 +150,6 @@ def repeat_game():
     else:
         if answer == '1':
             print("Let's play!")
-            board = BeautifulTable()
-            board.append_row(['1', '2', '3'])
-            board.append_row(['4', '5', '6'])
-            board.append_row(['7', '8', '9'])
-            print(board, '\n')
         elif answer == '2':
             print("Thanks for playing, until next time!")
             playing = False
@@ -179,6 +183,7 @@ def main():
             continue
         else:
             repeat = repeat_game()
+            board = new_board()
 
 #with open('board', mode = 'wb') as my_file:  #this saves the board
 #    pickle.dump(board, my_file)
