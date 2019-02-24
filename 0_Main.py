@@ -87,7 +87,7 @@ def transform_choice(player_choice):
     return board_coordinates
 
 # The board is updated by adding player choice on relevant square
-def updated_board(player, board_coordinates, board):
+def update_board(player, board_coordinates, board):
     if board_coordinates == (0,0):
         board[0][0] = player
         print(board)
@@ -128,7 +128,7 @@ def updated_board(player, board_coordinates, board):
 def get_choice(player, board):
     player_choice = open_square()
     board_coordinates = transform_choice(player_choice)
-    board = updated_board(player, board_coordinates, board)
+    board = update_board(player, board_coordinates, board)
     #print(board)
     return board
 
