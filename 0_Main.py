@@ -15,7 +15,7 @@ in a row is the winner.
 #import pickle
 
 available_square = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
-board_squares = {1:(0,0), 2:(0,1), 3:(0,2), 4:(1.0), 5:(1,1), 6:(1,2),\
+board_squares = {1:(0,0), 2:(0,1), 3:(0,2), 4:(1,0), 5:(1,1), 6:(1,2),\
                       7:(2,0), 8:(2,1), 9:(2,2)}
 
 playing = True
@@ -118,10 +118,10 @@ def update_board(player, board_coordinates, board):
 # if choice not in list of squares, player must choose again
 # choice is translated into board_coordinates
 # choice is shown on the board
-def get_choice(player_choice, board):
+def get_choice(player, board):
     player_choice = open_square()
     board_coordinates = transform_choice(player_choice)
-    board = update_board(player_choice, board_coordinates, board)
+    board = update_board(player, board_coordinates, board)
     print(board)
     return board
 
