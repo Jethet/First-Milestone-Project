@@ -137,7 +137,7 @@ def check_winner(board):
         print("We have a winner!")
         return True
     else:
-        print("No winner this time!")
+        print("No winner!")
         return False
 
 # When the game ends, the player is asked if s/he wants to play again:
@@ -149,6 +149,7 @@ def repeat_game():
     else:
         if answer == '1':
             print("Let's play!")
+            board = new_board()
         elif answer == '2':
             print("Thanks for playing, until next time!")
             playing = False
@@ -163,6 +164,7 @@ def main():
 
         # First step is ask players if they want to play:
     start = start_game()
+    board = new_board()
         # Second step: player chooses X or O:
     while playing == True:
         player = get_player()
@@ -182,7 +184,6 @@ def main():
             continue
         else:
             repeat = repeat_game()
-            board = new_board()
 
 #with open('board', mode = 'wb') as my_file:  #this saves the board
 #    pickle.dump(board, my_file)
