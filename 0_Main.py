@@ -13,19 +13,18 @@ in a row is the winner.
 # Pickle is used to save all the  changes to the board during the game.
 # Player is asked to choose X or O; player X starts.
 #import pickle
-"""
+
 from beautifultable import BeautifulTable
+
 board = BeautifulTable()
 board.append_row(['1', '2', '3'])
 board.append_row(['4', '5', '6'])
 board.append_row(['7', '8', '9'])
 print(board, '\n')
-"""
 
 available_square = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
 board_squares = {1:(0,0), 2:(0,1), 3:(0,2), 4:(1,0), 5:(1,1), 6:(1,2),\
                       7:(2,0), 8:(2,1), 9:(2,2)}
-
 playing = True
 
 # The player is asked if s/he wants to play:
