@@ -43,6 +43,7 @@ def start_game():
             exit()
 
 def new_board():
+    available_square = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
     board = BeautifulTable()
     board.append_row(['1', '2', '3'])
     board.append_row(['4', '5', '6'])
@@ -150,9 +151,10 @@ def repeat_game():
         if answer == '1':
             print("Let's play!")
             board = new_board()
+            available_square = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
+            print(available_square)
         elif answer == '2':
             print("Thanks for playing, until next time!")
-            playing = False
             exit()
 
 def main():
@@ -183,7 +185,8 @@ def main():
         if winner == False:
             continue
         else:
-            repeat = repeat_game()
+            repeat_game()
+# HOW TO REPEAT GAME WITHOUT start_game() AND new_board()??
 
 #with open('board', mode = 'wb') as my_file:  #this saves the board
 #    pickle.dump(board, my_file)
