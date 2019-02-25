@@ -163,7 +163,6 @@ def main():
     "Player X starts the game. Each time you play you can mark one square.\n"
     "The player who gets three marks in a row (diagonal, horizontal or vertical)\n"
     "wins the game.\n")
-
         # First step is ask players if they want to play:
     start = start_game()
     board = new_board()
@@ -186,7 +185,7 @@ def main():
             continue
         else:
             repeat_game()
-# HOW TO REPEAT GAME WITHOUT start_game() AND new_board()??
+# HOW TO REPEAT GAME WITHOUT FUNCTIONS start_game() AND new_board()??
 
 #with open('board', mode = 'wb') as my_file:  #this saves the board
 #    pickle.dump(board, my_file)
