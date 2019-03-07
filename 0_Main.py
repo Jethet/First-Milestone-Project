@@ -142,6 +142,7 @@ def check_winner(board):
         return False
 
 # When the game ends, the player is asked if s/he wants to play again:
+
 def repeat_game():
     answer = input("Would you like to play again? Choose 1 for yes and 2 for no. ")
     while answer != '1' and answer != '2':
