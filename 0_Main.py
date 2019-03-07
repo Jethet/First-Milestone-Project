@@ -142,7 +142,7 @@ def check_winner(board):
         return False
 
 # When the game ends, the player is asked if s/he wants to play again:
-
+"""
 def repeat_game():
     answer = input("Would you like to play again? Choose 1 for yes and 2 for no. ")
     while answer != '1' and answer != '2':
@@ -157,6 +157,7 @@ def repeat_game():
         elif answer == '2':
             print("Thanks for playing, until next time!")
             exit()
+"""
 
 def main():
     # This is an explanation of the game.
@@ -185,8 +186,11 @@ def main():
         if winner == False:
             continue
         else:
-            repeat_game()
-# HOW TO REPEAT GAME WITHOUT FUNCTIONS start_game() AND new_board()??
+            #repeat_game()
+            print("Thanks for playing, until next time!")
+            exit()
+
+
 
 #with open('board', mode = 'wb') as my_file:  #this saves the board
 #    pickle.dump(board, my_file)
