@@ -6,7 +6,11 @@ how to repeat the game? I wrote a function but there are problems with it:
    programme continues to use the original list, i.e. with the numbers that
    are left from the previous game;
 
--  after only one entry, the programme already declares a winner;
+-  in some cases, after only one or two choices, the programme already declares
+   a winner; it seems the choices of the previous game are still used even
+   though the list of available squares is renewed and the board is new;
+
+-  the programme also declares a winner when 3 in a row is X X O;
 
 -  HOW TO REPEAT GAME WITHOUT FUNCTIONS start_game() AND new_board()?
 
