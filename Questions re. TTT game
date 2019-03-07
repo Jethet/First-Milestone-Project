@@ -6,6 +6,8 @@ how to repeat the game? I wrote a function but there are problems with it:
    programme continues to use the original list, i.e. with the numbers that
    are left from the previous game;
 
+-  after only one entry, the programme already declares a winner;
+
 -  HOW TO REPEAT GAME WITHOUT FUNCTIONS start_game() AND new_board()?
 
--  after only one entry, the programme already declares a winner;
+-  should pickle/unpickle be used?
