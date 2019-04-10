@@ -147,20 +147,6 @@ def check_winner(board):
     else:
         print("No winner!")
         return False
-"""
-def check_winner(board):
-    if board[0][0] and board[1][1] and board[2][2] == 'X' or board[0][2] and \
-       board[1][1] == board[2][0] or board[0][0] and board[0][1] == \
-       board[0][2] or board[1][0] and board[1][1] == board[1][2] or \
-       board[2][0] and board[2][1] == board[2][2] or board[0][0] and \
-       board[1][0] == board[2][0] or board[0][1] and board[1][1] \
-       == board[2][1] or board[0][2] and board[1][2] == board[2][2]:
-        print("We have a winner!")
-        return True
-    else:
-        print("No winner!")
-        return False
-"""
 # When the game ends, the player is asked if s/he wants to play again:
 """
 def repeat_game():
