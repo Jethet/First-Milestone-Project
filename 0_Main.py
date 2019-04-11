@@ -27,6 +27,18 @@ board_squares = {1:(0,0), 2:(0,1), 3:(0,2), 4:(1,0), 5:(1,1), 6:(1,2),\
                       7:(2,0), 8:(2,1), 9:(2,2)}
 playing = True
 
+def clean_board(board):
+      board[0][0] = '1'
+      board[0][1] = '2'
+      board[0][2] = '3'
+      board[1][0] = '4'
+      board[1][1] = '5'
+      board[1][2] = '6'
+      board[2][0] = '7'
+      board[2][1] = '8'
+      board[2][2] = '9'
+      return board
+
 # The player is asked if s/he wants to play:
 def start_game():
     start = input("Would you like to play Tic Tac Toe? Choose 1 for yes\
@@ -77,6 +89,8 @@ def open_square():
 
 # The choice is transformed into board board_coordinates:
 def transform_choice(player_choice):
+    board_squares = {1:(0,0), 2:(0,1), 3:(0,2), 4:(1,0), 5:(1,1), 6:(1,2),\
+                          7:(2,0), 8:(2,1), 9:(2,2)}
     board_coordinates = board_squares.get(player_choice)
     print(board_coordinates)
     return board_coordinates
@@ -129,19 +143,22 @@ def get_choice(player, board):
 
 # The player who gets three marks in a row is declared the winner.
 def check_winner(board):
-    if board[0][0] and board[1][1] and board[2][2] == 'X' or board[0][2] and \
-       board[1][1] and board[2][0] == 'X' or board[0][0] and board[0][1] and \
-       board[0][2] == 'X' or board[1][0] and board[1][1] and board[1][2] == 'X' \
-       or board[2][0] and board[2][1] and board[2][2] == 'X' or board[0][0] and \
-       board[1][0] and board[2][0] == 'X' or board[0][1] and board[1][1] \
-       and board[2][1] == 'X' or board[0][2] and board[1][2] and board[2][2] \
-       == 'X' or board[0][0] and board[1][1] and board[2][2] == 'O' or board[0][2] \
-       and board[1][1] and board[2][0] == 'O' or board[0][0] and board[0][1] and \
-       board[0][2] == 'O' or board[1][0] and board[1][1] and board[1][2] == 'O' \
-       or board[2][0] and board[2][1] and board[2][2] == 'O' or board[0][0] and \
-       board[1][0] and board[2][0] == 'O' or board[0][1] and board[1][1] \
-       and board[2][1] == 'O' or board[0][2] and board[1][2] and board[2][2] \
-       == 'O' :
+    if board[0][0] == 'X' and board[1][1] == 'X' and board[2][2] == 'X' or \
+        board[0][2] == 'X' and board[1][1] == 'X' and board[2][0] == 'X' or \
+        board[0][0] == 'X' and board[0][1] == 'X' and board[0][2] == 'X' or \
+        board[1][0] == 'X' and board[1][1] == 'X' and board[1][2] == 'X' or \
+        board[2][0] == 'X' and board[2][1] == 'X' and board[2][2] == 'X' or \
+        board[0][0] == 'X' and board[1][0] == 'X' and board[2][0] == 'X' or \
+        board[0][1] == 'X' and board[1][1] == 'X' and board[2][1] == 'X' or \
+        board[0][2] == 'X' and board[1][2] == 'X' and board[2][2] == 'X' or \
+        board[0][0] == 'O' and board[1][1] == 'O' and board[2][2] == 'O' or \
+        board[0][2] == 'O' and board[1][1] == 'O' and board[2][0] == 'O' or \
+        board[0][0] == 'O' and board[0][1] == 'O' and board[0][2] == 'O' or \
+        board[1][0] == 'O' and board[1][1] == 'O' and board[1][2] == 'O' or \
+        board[2][0] == 'O' and board[2][1] == 'O' and board[2][2] == 'O' or \
+        board[0][0] == 'O' and board[1][0] == 'O' and board[2][0] == 'O' or \
+        board[0][1] == 'O' and board[1][1] == 'O' and board[2][1] == 'O' or \
+        board[0][2] == 'O' and board[1][2] == 'O' and board[2][2] == 'O' :
         print("We have a winner!")
         return True
     else:
@@ -174,6 +191,7 @@ def main():
         # First step is ask players if they want to play:
     start = start_game()
     board = new_board()
+    board = clean_board(board)
         # Second step: player chooses X or O:
     while playing == True:
         player = get_player()
@@ -194,6 +212,9 @@ def main():
         else:
             #repeat_game()
             print("Thanks for playing, until next time!")
+
+            clean_board(board)
+            print(board)
             exit()
 
 

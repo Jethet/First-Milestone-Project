@@ -25,7 +25,7 @@ Other question in general re. pickle: I know that the 'b' in 'wb' and 'rb'
 stands for 'binary'. I also see code that just uses 'r' and 'w'.
 Is there a best practice for this?
 
-
+z
 Next question: how to repeat the game? I wrote a function but there are problems with it:
 
 -  when repeating the game, the new list of numbers is not used and the
