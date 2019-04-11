@@ -27,18 +27,6 @@ board_squares = {1:(0,0), 2:(0,1), 3:(0,2), 4:(1,0), 5:(1,1), 6:(1,2),\
                       7:(2,0), 8:(2,1), 9:(2,2)}
 playing = True
 
-def clean_board(board):
-      board[0][0] = '1'
-      board[0][1] = '2'
-      board[0][2] = '3'
-      board[1][0] = '4'
-      board[1][1] = '5'
-      board[1][2] = '6'
-      board[2][0] = '7'
-      board[2][1] = '8'
-      board[2][2] = '9'
-      return board
-
 # The player is asked if s/he wants to play:
 def start_game():
     start = input("Would you like to play Tic Tac Toe? Choose 1 for yes\
@@ -165,7 +153,6 @@ def check_winner(board):
         print("No winner!")
         return False
 # When the game ends, the player is asked if s/he wants to play again:
-"""
 def repeat_game():
     answer = input("Would you like to play again? Choose 1 for yes and 2 for no. ")
     while answer != '1' and answer != '2':
@@ -180,7 +167,6 @@ def repeat_game():
         elif answer == '2':
             print("Thanks for playing, until next time!")
             exit()
-"""
 
 def main():
     # This is an explanation of the game.
@@ -191,7 +177,7 @@ def main():
         # First step is ask players if they want to play:
     start = start_game()
     board = new_board()
-    board = clean_board(board)
+
         # Second step: player chooses X or O:
     while playing == True:
         player = get_player()
@@ -210,12 +196,12 @@ def main():
         if winner == False:
             continue
         else:
-            #repeat_game()
+            repeat_game()
             print("Thanks for playing, until next time!")
 
-            clean_board(board)
+
             print(board)
-            exit()
+            #exit()
 
 
 
