@@ -80,8 +80,6 @@ def open_square():
             player_choice = input("Where do you place your mark? ")
         else:
             available_square.remove(player_choice)
-            print(player_choice)
-            print(available_square)
             return int(player_choice)
     except ValueError:
         pass
@@ -91,7 +89,6 @@ def transform_choice(player_choice):
     board_squares = {1:(0,0), 2:(0,1), 3:(0,2), 4:(1,0), 5:(1,1), 6:(1,2),\
                           7:(2,0), 8:(2,1), 9:(2,2)}
     board_coordinates = board_squares.get(player_choice)
-    print(board_coordinates)
     return board_coordinates
 
 # The board is updated by adding player choice on relevant square
@@ -191,7 +188,7 @@ def main():
         if winner == False:
             continue
         if winner == True:
-            clean_board()
+            clean_board(board)
             play_game()
 
 #with open('board', mode = 'wb') as my_file:  #this saves the board
