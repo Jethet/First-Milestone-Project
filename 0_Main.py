@@ -37,7 +37,7 @@ def play_game():
             print("Let's play!")
             main()
         elif answer == '2':
-            print("Thanks for player, until next time!")
+            print("Thanks and until next time!")
             playing = False
             exit()
 
