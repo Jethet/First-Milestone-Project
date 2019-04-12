@@ -27,18 +27,17 @@ board_squares = {1:(0,0), 2:(0,1), 3:(0,2), 4:(1,0), 5:(1,1), 6:(1,2),\
                       7:(2,0), 8:(2,1), 9:(2,2)}
 playing = True
 
-# The player is asked if s/he wants to play:
-def start_game():
-    start = input("Would you like to play Tic Tac Toe? Choose 1 for yes\
- and 2 for no. ")
-    while start != '1' and start != '2':
+def play_game():
+    answer = input("Would you like to play TicTacToe? Choose 1 for yes and 2 for no. ")
+    while answer != '1' and answer != '2':
         print("This is not valid. Please enter 1 or 2.")
-        start = input("Choose 1 for yes and 2 for no. ")
+        answer = input("Choose 1 for yes and 2 for no. ")
     else:
-        if start == '1':
+        if answer == '1':
             print("Let's play!")
-        elif start == '2':
-            print("Game over!")
+            main()
+        elif answer == '2':
+            print("Thanks for player, until next time!")
             playing = False
             exit()
 
@@ -152,21 +151,7 @@ def check_winner(board):
     else:
         print("No winner!")
         return False
-# When the game ends, the player is asked if s/he wants to play again:
-def repeat_game():
-    answer = input("Would you like to play again? Choose 1 for yes and 2 for no. ")
-    while answer != '1' and answer != '2':
-        print("This is not valid. Please enter 1 or 2.")
-        answer = input("Choose 1 for yes and 2 for no. ")
-    else:
-        if answer == '1':
-            print("Let's play!")
-            board = new_board()
-            available_square = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
-            print(available_square)
-        elif answer == '2':
-            print("Thanks for playing, until next time!")
-            exit()
+
 
 def main():
     # This is an explanation of the game.
@@ -174,11 +159,9 @@ def main():
     "Player X starts the game. Each time you play you can mark one square.\n"
     "The player who gets three marks in a row (diagonal, horizontal or vertical)\n"
     "wins the game.\n")
-        # First step is ask players if they want to play:
-    start = start_game()
+    # Print board for the game:
     board = new_board()
-
-        # Second step: player chooses X or O:
+    # Second step: player chooses X or O:
     while playing == True:
         player = get_player()
         # Third step: board is printed:
@@ -195,17 +178,10 @@ def main():
         winner = check_winner(board)
         if winner == False:
             continue
-        else:
-            repeat_game()
-            print("Thanks for playing, until next time!")
-
-
-            print(board)
-            #exit()
-
-
+        if winner == True:
+            play_game()
 
 #with open('board', mode = 'wb') as my_file:  #this saves the board
 #    pickle.dump(board, my_file)
 
-main()
+play_game()
